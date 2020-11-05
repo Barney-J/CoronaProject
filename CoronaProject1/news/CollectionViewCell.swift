@@ -1,12 +1,8 @@
-//
-//  CollectionViewCell.swift
-//  CoronaProject1
-//
-//  Created by Eugene Sushko on 11/4/20.
-//
-
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var titleCell: UILabel!
+    @IBOutlet weak var authorCell: UILabel!
 }

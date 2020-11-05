@@ -1,29 +1,20 @@
-//
-//  InfoView.swift
-//  CoronaProject1
-//
-//  Created by Eugene Sushko on 11/5/20.
-//
-
 import UIKit
 
 class InfoView: UIViewController {
 
+    @IBOutlet weak var confirmedLabel: UILabel!
+    @IBOutlet weak var deathLabel: UILabel!
+    
+    var confirmedForLabel = 0
+    var deathForLabel = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        confirmedLabel.text = String(confirmedForLabel)
+        deathLabel.text = String(deathForLabel)
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

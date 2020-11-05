@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  CoronaProject1
-//
-//  Created by Eugene Sushko on 10/31/20.
-//
-
 import UIKit
 
 @main

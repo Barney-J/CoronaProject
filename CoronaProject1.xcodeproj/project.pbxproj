@@ -13,6 +13,7 @@
 		2D1F4694254DB138007DF81D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F4693254DB138007DF81D /* Assets.xcassets */; };
 		2D1F4697254DB138007DF81D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D1F4695254DB138007DF81D /* LaunchScreen.storyboard */; };
 		2D1F46A0254DB2C6007DF81D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1F469F254DB2C6007DF81D /* LoginView.swift */; };
+		2D3DDF1D25545CA600151218 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D3DDF1C25545CA600151218 /* UserManager.swift */; };
 		2D504CF9255316ED00FC7552 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504CF8255316ED00FC7552 /* TabViewController.swift */; };
 		2D504CFC25532AC000FC7552 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504CFB25532ABF00FC7552 /* CollectionViewCell.swift */; };
 		2D504D092553314600FC7552 /* NewsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504D082553314600FC7552 /* NewsCollection.swift */; };
@@ -33,6 +34,7 @@
 		2D1F4696254DB138007DF81D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D1F4698254DB138007DF81D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D1F469F254DB2C6007DF81D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		2D3DDF1C25545CA600151218 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		2D504CF8255316ED00FC7552 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		2D504CFB25532ABF00FC7552 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2D504D082553314600FC7552 /* NewsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollection.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				2D5A086C254F433400E2C186 /* Profile.swift */,
+				2D3DDF1C25545CA600151218 /* UserManager.swift */,
 			);
 			name = Profile;
 			path = news;
@@ -209,6 +212,7 @@
 				2D504D092553314600FC7552 /* NewsCollection.swift in Sources */,
 				2D1F468B254DB131007DF81D /* AppDelegate.swift in Sources */,
 				2D504D1A2553615B00FC7552 /* TableCasesCell.swift in Sources */,
+				2D3DDF1D25545CA600151218 /* UserManager.swift in Sources */,
 				2D504D0E25533AAD00FC7552 /* Article.swift in Sources */,
 				2D504D272553814A00FC7552 /* InfoView.swift in Sources */,
 				2D5A086E254F433400E2C186 /* Profile.swift in Sources */,

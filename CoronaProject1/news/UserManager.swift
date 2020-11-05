@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+
+struct UserManager {
+    static var userLogin:String?
+}

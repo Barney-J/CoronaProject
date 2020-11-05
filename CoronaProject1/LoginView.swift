@@ -87,6 +87,8 @@ class LoginView: UIViewController {
             
             print("Login : \(String(loginTextField.text!)) , password :  \(String(passwordTextField.text!))")
             
+            UserManager.userLogin = loginTextField.text
+            
             let viewControllers = [TabViewController()]
             
             guard let navigationController = self.navigationController else {return}

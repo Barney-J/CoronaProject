@@ -4,14 +4,18 @@ class Profile: UIViewController {
 
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
     }
     @IBAction func goLoginView(_ sender: UIButton) {
+        
+        guard let navigationController = self.navigationController else {return}
+        
         let login = [LoginView()]
-        navigationController?.navigationController?.setViewControllers(login, animated: true)
+        navigationController.tabBarController?.setViewControllers(login, animated: true)
     }
     
 

@@ -10,7 +10,8 @@ class LoginView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        
         self.navigationController?.isNavigationBarHidden = true
         
         loginTextField.delegate = self
@@ -87,6 +88,7 @@ class LoginView: UIViewController {
             print("Login : \(String(loginTextField.text!)) , password :  \(String(passwordTextField.text!))")
             
             let viewControllers = [TabViewController()]
+            
             guard let navigationController = self.navigationController else {return}
             navigationController.setViewControllers(viewControllers, animated: true)
         }

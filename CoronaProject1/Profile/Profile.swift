@@ -9,15 +9,14 @@ class Profile: UIViewController {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
         
-        username.text = UserManager.userLogin
+        username.text = UserManager.username
         
     }
     @IBAction func goLoginView(_ sender: UIButton) {
-        
         guard let navigationController = self.navigationController else {return}
         
         let login = [LoginView()]
-        navigationController.tabBarController?.setViewControllers(login, animated: true)
+        navigationController.tabBarController?.navigationController?.setViewControllers(login, animated: true)
     }
     
 

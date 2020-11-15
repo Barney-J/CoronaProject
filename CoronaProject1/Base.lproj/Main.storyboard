@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="43K-2d-s1g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="43K-2d-s1g">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -305,16 +305,16 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="K5n-MN-OMu">
-                                                    <rect key="frame" x="103.5" y="0.5" width="129.5" height="20.5"/>
+                                                    <rect key="frame" x="102.5" y="0.5" width="116" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLF-mo-vM6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="85" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infected: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VLF-mo-vM6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="71.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucW-Pc-x4O">
-                                                            <rect key="frame" x="88" y="0.0" width="41.5" height="20.5"/>
+                                                            <rect key="frame" x="74.5" y="0.0" width="41.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -322,16 +322,16 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="0zk-nR-jxi">
-                                                    <rect key="frame" x="257.5" y="0.5" width="97.5" height="20.5"/>
+                                                    <rect key="frame" x="226" y="0.5" width="129" height="20.5"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deaths" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYJ-dA-JC6">
-                                                            <rect key="frame" x="0.0" y="0.0" width="54" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recovered: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYJ-dA-JC6">
+                                                            <rect key="frame" x="0.0" y="0.0" width="85.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CGO-9v-wCs">
-                                                            <rect key="frame" x="56" y="0.0" width="41.5" height="20.5"/>
+                                                            <rect key="frame" x="87.5" y="0.0" width="41.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -349,9 +349,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="confirmedInt" destination="ucW-Pc-x4O" id="of3-DY-dQ4"/>
                                     <outlet property="country" destination="3fA-BL-dy7" id="QIl-UL-Ia1"/>
-                                    <outlet property="deathInt" destination="CGO-9v-wCs" id="esD-75-guS"/>
+                                    <outlet property="infectedInt" destination="ucW-Pc-x4O" id="BTe-f3-hTW"/>
+                                    <outlet property="recoveredInt" destination="CGO-9v-wCs" id="Arh-GH-zjj"/>
                                     <segue destination="aFR-WF-zzS" kind="show" identifier="ShowDetail" id="QKP-G5-bsU"/>
                                 </connections>
                             </tableViewCell>
@@ -376,19 +376,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="zxL-gF-voh">
-                                <rect key="frame" x="20" y="288" width="126.5" height="69"/>
+                                <rect key="frame" x="20" y="288" width="173" height="69"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="XAW-3X-Pos">
-                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="42.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="-13" translatesAutoresizingMaskIntoConstraints="NO" id="XAW-3X-Pos">
+                                        <rect key="frame" x="0.0" y="0.0" width="173" height="42.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hox-Ic-afi">
-                                                <rect key="frame" x="0.0" y="0.0" width="85" height="42.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infected:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hox-Ic-afi">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="42.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHO-R3-7EV">
-                                                <rect key="frame" x="85" y="0.0" width="41.5" height="42.5"/>
+                                                <rect key="frame" x="80" y="0.0" width="93" height="42.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -396,16 +396,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="YEo-u3-9cC">
-                                        <rect key="frame" x="0.0" y="48.5" width="126.5" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="48.5" width="173" height="20.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Deaths: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-DM-OYG">
-                                                <rect key="frame" x="0.0" y="0.0" width="62.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="recovered: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-DM-OYG">
+                                                <rect key="frame" x="0.0" y="0.0" width="85.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9X-hc-Edl">
-                                                <rect key="frame" x="64.5" y="0.0" width="62" height="20.5"/>
+                                                <rect key="frame" x="87.5" y="0.0" width="85.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -422,9 +422,7 @@
                                     <constraint firstItem="XAW-3X-Pos" firstAttribute="leading" secondItem="zxL-gF-voh" secondAttribute="leading" id="3Xi-lQ-T1B"/>
                                     <constraint firstItem="YEo-u3-9cC" firstAttribute="leading" secondItem="zxL-gF-voh" secondAttribute="leading" id="CJs-T4-B2i"/>
                                     <constraint firstItem="XAW-3X-Pos" firstAttribute="top" secondItem="zxL-gF-voh" secondAttribute="top" id="J8D-L2-Cwd"/>
-                                    <constraint firstAttribute="trailing" secondItem="YEo-u3-9cC" secondAttribute="trailing" id="VFR-Jj-OHU"/>
                                     <constraint firstAttribute="bottom" secondItem="YEo-u3-9cC" secondAttribute="bottom" id="Ybs-9x-xGv"/>
-                                    <constraint firstAttribute="trailing" secondItem="XAW-3X-Pos" secondAttribute="trailing" id="jUf-6e-t1e"/>
                                     <constraint firstItem="YEo-u3-9cC" firstAttribute="top" secondItem="XAW-3X-Pos" secondAttribute="bottom" constant="6" id="mQu-Iw-k5p"/>
                                 </constraints>
                             </stackView>
@@ -432,7 +430,6 @@
                         <viewLayoutGuide key="safeArea" id="pGO-ea-apv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pGO-ea-apv" firstAttribute="trailing" secondItem="zxL-gF-voh" secondAttribute="trailing" constant="267.5" id="M8J-EI-dO0"/>
                             <constraint firstItem="pGO-ea-apv" firstAttribute="bottom" secondItem="zxL-gF-voh" secondAttribute="bottom" constant="456" id="NeR-oO-9j0"/>
                             <constraint firstItem="zxL-gF-voh" firstAttribute="top" secondItem="pGO-ea-apv" secondAttribute="top" constant="200" id="caU-jd-EUL"/>
                             <constraint firstItem="zxL-gF-voh" firstAttribute="leading" secondItem="pGO-ea-apv" secondAttribute="leading" constant="20" id="t54-J6-trn"/>
@@ -440,8 +437,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="r0v-Je-uqG"/>
                     <connections>
-                        <outlet property="confirmedLabel" destination="ZHO-R3-7EV" id="za9-0f-MVb"/>
-                        <outlet property="deathLabel" destination="n9X-hc-Edl" id="9ax-mw-wpK"/>
+                        <outlet property="infectedLabel" destination="ZHO-R3-7EV" id="Ek8-uz-sOa"/>
+                        <outlet property="recoveredLabel" destination="n9X-hc-Edl" id="40a-3j-5mC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yR8-40-MV2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

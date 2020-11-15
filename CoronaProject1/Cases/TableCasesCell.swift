@@ -2,8 +2,8 @@ import UIKit
 
 class TableCasesCell: UITableViewCell {
     @IBOutlet weak var country: UILabel!
-    @IBOutlet weak var confirmedInt: UILabel!
-    @IBOutlet weak var deathInt: UILabel!
+    @IBOutlet weak var infectedInt: UILabel!
+    @IBOutlet weak var recoveredInt: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

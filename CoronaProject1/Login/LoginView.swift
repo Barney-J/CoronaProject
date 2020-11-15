@@ -10,8 +10,7 @@ class LoginView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         self.navigationController?.isNavigationBarHidden = true
         
         loginTextField.delegate = self
@@ -36,6 +35,10 @@ class LoginView: UIViewController {
         } completion: { _ in
             self.loginPassword.didMoveToWindow()
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loginTextField.text = UserManager.username
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -84,10 +87,7 @@ class LoginView: UIViewController {
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }else {
-            
-            print("Login : \(String(loginTextField.text!)) , password :  \(String(passwordTextField.text!))")
-            
-            UserManager.userLogin = loginTextField.text
+            UserManager.username = loginTextField.text
             
             let viewControllers = [TabViewController()]
             

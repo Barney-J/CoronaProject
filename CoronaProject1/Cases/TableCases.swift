@@ -52,8 +52,9 @@ class TableCases: UITableViewController{
                                                  for: indexPath) as! TableCasesCell
         
         cell.country.text = countryManager[indexPath.row].country
-        cell.infectedInt.text = String(countryManager[indexPath.row].infected!)
+        cell.infectedInt.text = String(countryManager[indexPath.row].infected ?? 0)
         cell.recoveredInt.text = String(countryManager[indexPath.row].recovered ?? 0)
+        
         return cell
     }
 
@@ -61,7 +62,7 @@ class TableCases: UITableViewController{
         if segue.identifier == "ShowDetail" {
             if  let indexPath = self.tableView.indexPathForSelectedRow {
                 let infoView = segue.destination as! InfoView
-                infoView.infectedInfoView = String(countryManager[indexPath.row].infected!)
+                infoView.infectedInfoView = String(countryManager[indexPath.row].infected ?? 0)
                 infoView.recoveredInfoView = String(countryManager[indexPath.row].recovered ?? 0)
                 infoView.self.navigationItem.title = countryManager[indexPath.row].country
             }

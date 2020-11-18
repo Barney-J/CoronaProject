@@ -32,7 +32,7 @@ class TableCases: UITableViewController{
 
             }
         }
-            dataTask.resume()
+        dataTask.resume()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -17,7 +17,7 @@
 		2D504CF9255316ED00FC7552 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504CF8255316ED00FC7552 /* TabViewController.swift */; };
 		2D504CFC25532AC000FC7552 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504CFB25532ABF00FC7552 /* CollectionViewCell.swift */; };
 		2D504D092553314600FC7552 /* NewsCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504D082553314600FC7552 /* NewsCollection.swift */; };
-		2D504D0E25533AAD00FC7552 /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504D0D25533AAD00FC7552 /* Case.swift */; };
+		2D504D0E25533AAD00FC7552 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504D0D25533AAD00FC7552 /* Article.swift */; };
 		2D504D1225535F2F00FC7552 /* TableCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504D1125535F2E00FC7552 /* TableCases.swift */; };
 		2D504D1A2553615B00FC7552 /* TableCasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504D182553615B00FC7552 /* TableCasesCell.swift */; };
 		2D504D1E2553618D00FC7552 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504D1D2553618D00FC7552 /* Country.swift */; };
@@ -38,7 +38,7 @@
 		2D504CF8255316ED00FC7552 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		2D504CFB25532ABF00FC7552 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		2D504D082553314600FC7552 /* NewsCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollection.swift; sourceTree = "<group>"; };
-		2D504D0D25533AAD00FC7552 /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
+		2D504D0D25533AAD00FC7552 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		2D504D1125535F2E00FC7552 /* TableCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCases.swift; sourceTree = "<group>"; };
 		2D504D182553615B00FC7552 /* TableCasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCasesCell.swift; sourceTree = "<group>"; };
 		2D504D1D2553618D00FC7552 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			children = (
 				2D504D082553314600FC7552 /* NewsCollection.swift */,
 				2D504CFB25532ABF00FC7552 /* CollectionViewCell.swift */,
-				2D504D0D25533AAD00FC7552 /* Case.swift */,
+				2D504D0D25533AAD00FC7552 /* Article.swift */,
 			);
 			path = NewsPack;
 			sourceTree = "<group>";
@@ -211,7 +211,7 @@
 				2D1F468B254DB131007DF81D /* AppDelegate.swift in Sources */,
 				2D504D1A2553615B00FC7552 /* TableCasesCell.swift in Sources */,
 				2D3DDF1D25545CA600151218 /* UserManager.swift in Sources */,
-				2D504D0E25533AAD00FC7552 /* Case.swift in Sources */,
+				2D504D0E25533AAD00FC7552 /* Article.swift in Sources */,
 				2D504D272553814A00FC7552 /* InfoView.swift in Sources */,
 				2D5A086E254F433400E2C186 /* Profile.swift in Sources */,
 				2D504CFC25532AC000FC7552 /* CollectionViewCell.swift in Sources */,

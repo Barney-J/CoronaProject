@@ -6,10 +6,14 @@ struct Country: Decodable {
     var country: String
 
     private enum CodingKeys: String, CodingKey {
-            case infected, recovered, country
+            case infected,
+                 recovered,
+                 country
         }
 
-    init(infected: Int? = nil, recovered: Int? = nil, country: String? = nil) {
+    init(infected: Int? = nil,
+         recovered: Int? = nil,
+         country: String? = nil) {
             self.infected = infected
             self.recovered = recovered
             self.country = country!

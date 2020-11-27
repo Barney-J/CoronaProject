@@ -21,31 +21,28 @@ class NewsCollection: UICollectionViewController {
 
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
             
-            if let error = error{
-                print(error)
-            }
+            guard let data = data else {return}
+            guard error == nil else {return}
             
-            if let data = data {
-                
+            do{
                 let decoder = JSONDecoder()
-                let article = try? decoder.decode(Article.self, from: data)
+                let article = try decoder.decode(Article.self, from: data)
                 
-                print([article])
-
                 DispatchQueue.main.async{
-                    guard let article = article else {return}
                     self.articleManager = article
                     self.collectionView.reloadData()
                 }
+            }catch let error {
+                print(error)
             }
+           
         }
         dataTask.resume()
-        
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4 //articleManager.count
+        return 4 //articleManager.articles.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

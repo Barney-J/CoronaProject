@@ -1,4 +1,5 @@
 import UIKit
+import KeychainAccess
 
 class LoginView: UIViewController {
 
@@ -10,6 +11,35 @@ class LoginView: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let keychain = Keychain(service: "com.example.github-token")
+
+        DispatchQueue.global().async {
+            do {
+                // Should be the secret invalidated when passcode is removed? If not then use `.WhenUnlocked`
+                try keychain
+                    .accessibility(.whenPasscodeSetThisDeviceOnly, authenticationPolicy: .userPresence)
+                    .set("01234567-89ab-cdef-0123-456789abcdef", key: "kishikawakatsumi")
+                
+                //let value = try keychain.get("kishikawakatsumi")
+               // print(value)
+            } catch let error {
+                print(error)
+            }
+        }
+        
+        
+        DispatchQueue.global().async {
+            do {
+                let password = try keychain
+                    .authenticationPrompt("Authenticate to login to server")
+                    .get("kishikawakatsumi")
+
+                print("password: \(password)")
+            } catch let error {
+                print(error)
+            }
+        }
 
         self.navigationController?.isNavigationBarHidden = true
         

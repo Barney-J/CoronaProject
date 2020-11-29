@@ -28,7 +28,6 @@ class NewsCollection: UICollectionViewController {
             do{
                 let decoder = JSONDecoder()
                 let newsCollection = try decoder.decode(News.self, from: data)
-                dump(newsCollection)
                 DispatchQueue.main.async{
                     self.articleManager = newsCollection
                     self.collectionView.reloadData()
@@ -59,7 +58,7 @@ class NewsCollection: UICollectionViewController {
         cell.authorCell.textColor = .red
         
         
-        let backgroungImageCell = articleManager.articles[indexPath.row].urlToImage
+        let backgroungImageCell = articleManager.articles[indexPath.row].urlToImage ?? nil
         guard let backgroungImage = backgroungImageCell else {return cell}
         let url = URL(string: backgroungImage)
             if let data = try? Data(contentsOf: url!)

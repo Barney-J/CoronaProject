@@ -1,5 +1,6 @@
 import UIKit
 import Foundation
+import PKHUD
 
 class TableCases: UITableViewController{
     
@@ -8,6 +9,8 @@ class TableCases: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Cases"
+        
+        HUD.show(.progress)
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
@@ -28,6 +31,7 @@ class TableCases: UITableViewController{
                     guard let countries = countries else {return}
                     self.countryManager = countries
                     self.tableView.reloadData()
+                    HUD.flash(.success, delay: 1.0)
                 }
 
             }

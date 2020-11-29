@@ -1,77 +1,23 @@
 import Foundation
+import UIKit
 
-struct Article : Codable {
-    var articles: [List]
 
-    init(articles: [List]? = []) {
-        self.articles = articles!
-    }
-
-    private enum CodingKeys: String, CodingKey {
-        case articles
-    }
+struct News: Codable {
+    let status: String
+    let totalResults: Int
+    let articles: [Article]
 }
 
-struct List: Codable {
-    var author: String?
-    var title: String
-    var url: String
-    var urlToImage: String?
-    var content: String
 
-    private enum CodingKeys: String, CodingKey {
-            case author,
-                 title,
-                 url,
-                 urlToImage,
-                 content
-        }
+// MARK: - Article
+struct Article: Codable {
+    let author: String?
+    let title: String
+    let url: String?
+    let urlToImage: String?
+    let content: String?
 
-    init(author: String? = nil,
-         title: String? = nil,
-         url: String? = nil,
-         urlToImage: String? = nil,
-         content: String? = nil){
-            self.author = author!
-            self.title = title!
-            self.url = url!
-            self.urlToImage = urlToImage!
-            self.content = content!
-    }
-
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        author = try? container.decode(String.self, forKey: .author)
-        title = try container.decode(String.self, forKey: .title)
-        url = try container.decode(String.self, forKey: .url)
-        urlToImage = try? container.decode(String.self, forKey: .urlToImage)
-        content = try container.decode(String.self, forKey: .content)
-    }
 }
-
-extension Article{
-    private enum TopCodingKeys: String, CodingKey {
-        case articles
-        
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: TopCodingKeys.self)
-        //articles = try container.decode([List].self, forKey: .articles)
-        let meta  = try container.nestedContainer(keyedBy: TopCodingKeys.self,
-                                                            forKey: .articles)
-
-        var articleContainer = try meta.nestedUnkeyedContainer(forKey: .articles)
-
-        var articles: [List] = []
-        while !articleContainer.isAtEnd {
-        let articleList = try articleContainer.decode(List.self)
-           articles.append(articleList)
-        }
-        self.init(articles: articles)
-    }
-}
-
 
 /*
  "articles":[

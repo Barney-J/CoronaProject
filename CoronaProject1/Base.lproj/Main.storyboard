@@ -213,6 +213,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lza-AE-LHw">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="170" id="dmG-oX-Ftw"/>
+                                                <constraint firstAttribute="width" constant="170" id="nQb-F6-twh"/>
+                                            </constraints>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPV-P9-oV9">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="133"/>
                                             <constraints>
@@ -232,8 +239,12 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="lza-AE-LHw" firstAttribute="leading" secondItem="ONc-t0-051" secondAttribute="leading" id="837-kZ-N5B"/>
                                         <constraint firstAttribute="trailing" secondItem="vcG-xG-P6I" secondAttribute="trailing" constant="8" id="EEB-ei-YZS"/>
                                         <constraint firstItem="VPV-P9-oV9" firstAttribute="top" secondItem="ONc-t0-051" secondAttribute="top" id="Gwx-da-v94"/>
+                                        <constraint firstAttribute="trailing" secondItem="lza-AE-LHw" secondAttribute="trailing" id="WvD-gs-Sds"/>
+                                        <constraint firstAttribute="bottom" secondItem="lza-AE-LHw" secondAttribute="bottom" id="Y44-tM-XfC"/>
+                                        <constraint firstItem="lza-AE-LHw" firstAttribute="top" secondItem="ONc-t0-051" secondAttribute="top" id="cfk-qX-3ts"/>
                                         <constraint firstAttribute="bottom" secondItem="vcG-xG-P6I" secondAttribute="bottom" id="eJw-i9-2vw"/>
                                         <constraint firstItem="vcG-xG-P6I" firstAttribute="top" secondItem="VPV-P9-oV9" secondAttribute="bottom" constant="8" symbolic="YES" id="h7y-GQ-vP3"/>
                                         <constraint firstItem="VPV-P9-oV9" firstAttribute="leading" secondItem="ONc-t0-051" secondAttribute="leading" id="kYN-XU-b4s"/>
@@ -245,6 +256,7 @@
                                 <connections>
                                     <outlet property="authorCell" destination="vcG-xG-P6I" id="OMg-1m-RaV"/>
                                     <outlet property="cellView" destination="ONc-t0-051" id="wM2-2f-Uob"/>
+                                    <outlet property="imageBackgroung" destination="lza-AE-LHw" id="m6V-Ur-ToJ"/>
                                     <outlet property="titleCell" destination="VPV-P9-oV9" id="sWC-Qv-v7t"/>
                                 </connections>
                             </collectionViewCell>

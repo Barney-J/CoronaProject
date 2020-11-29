@@ -1,15 +1,16 @@
 import UIKit
 import Foundation
+import PKHUD
 
 private let reuseIdentifier = "Cell"
 
 class NewsCollection: UICollectionViewController {
     
-    private var articleManager: Article = Article()
-    
+    private var articleManager: News?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "News"
+        HUD.show(.progress)
         
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
@@ -26,11 +27,12 @@ class NewsCollection: UICollectionViewController {
             
             do{
                 let decoder = JSONDecoder()
-                let article = try decoder.decode(Article.self, from: data)
-                
+                let newsCollection = try decoder.decode(News.self, from: data)
+                dump(newsCollection)
                 DispatchQueue.main.async{
-                    self.articleManager = article
+                    self.articleManager = newsCollection
                     self.collectionView.reloadData()
+                    HUD.flash(.success, delay: 1.0)
                 }
             }catch let error {
                 print(error)
@@ -42,16 +44,30 @@ class NewsCollection: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4 //articleManager.articles.count
+        guard let articleManager = articleManager else {return 0}
+        return articleManager.articles.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! CollectionViewCell
-    
-        //cell.titleCell.text = articleManager[indexPath.row].title
-        //cell.authorCell.text = articleManager[indexPath.row].author
+        guard let articleManager = articleManager else {return cell}
+ 
+        cell.titleCell.text = articleManager.articles[indexPath.row].title
+        cell.titleCell.textColor = .red
+        cell.authorCell.text = articleManager.articles[indexPath.row].author
+        cell.authorCell.textColor = .red
         
+        
+        let backgroungImageCell = articleManager.articles[indexPath.row].urlToImage
+        guard let backgroungImage = backgroungImageCell else {return cell}
+        let url = URL(string: backgroungImage)
+            if let data = try? Data(contentsOf: url!)
+            {
+                cell.imageBackgroung.sizeToFit()
+                cell.imageBackgroung.contentMode = .scaleToFill
+                cell.imageBackgroung.image = UIImage(data: data)
+            }
         return cell
     }
 

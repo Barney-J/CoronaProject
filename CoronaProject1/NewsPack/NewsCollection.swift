@@ -22,7 +22,7 @@ class NewsCollection: UICollectionViewController {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         
-        guard let url = URL(string: "https://newsapi.org/v2/top-headlines?country=us&apiKey=b305eaf8510c46a1918d14121688b90f&category=health"
+        guard let url = URL(string: "http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b305eaf8510c46a1918d14121688b90f"
         )else { return }
         
         let urlRequest = URLRequest(url: url)
@@ -83,6 +83,33 @@ class NewsCollection: UICollectionViewController {
             }
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == "Web" {
+            let webView: WebViewController = segue.destination as! WebViewController
+                let cell = sender as! CollectionViewCell
+            let indexPath = self.collectionView!.indexPath(for: cell)
+            guard let articleManager = articleManager else {return}
+            let url = URL(string: articleManager.articles[indexPath?.row ?? 0].url!)
+                        guard let urlPush = url else {return}
+            
+                        webView.url = urlPush
 
-
+            }
+        
+//        if segue.identifier == "Web" {
+//               let webView = segue.destination as! WebViewController
+//
+//           if let indexPaths = collectionView.indexPathsForSelectedItems {
+//            let indexPath = indexPaths
+//            guard let articleManager = articleManager else {return}
+//            let url = URL(string: articleManager.articles[indexPath].url!)
+//            guard let urlPush = url else {return}
+//
+//            webView.url = urlPush
+//           }
+//        }
+    }
 }

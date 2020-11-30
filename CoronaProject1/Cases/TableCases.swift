@@ -5,11 +5,6 @@ import PKHUD
 class TableCases: UITableViewController{
     
     private var countryManager: [Country] = []
-//    let myRefreshControl: UIRefreshControl = {
-//        let refreshControl = UIRefreshControl()
-//        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-//        return refreshControl
-//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()

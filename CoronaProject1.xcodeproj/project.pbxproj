@@ -25,6 +25,7 @@
 		2D5A086E254F433400E2C186 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A086C254F433400E2C186 /* Profile.swift */; };
 		547F286EA5466C8FE59A2A5F /* Pods_CoronaProject1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FEE036B09B94B01B763519 /* Pods_CoronaProject1.framework */; };
 		B335748F2573F59C006F0808 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B335748E2573F59C006F0808 /* GoogleService-Info.plist */; };
+		B360D9F225754EC300F392F6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B360D9F125754EC300F392F6 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		2D5A086C254F433400E2C186 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7632581A14D73360FDECFC3B /* Pods-CoronaProject1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaProject1.debug.xcconfig"; path = "Target Support Files/Pods-CoronaProject1/Pods-CoronaProject1.debug.xcconfig"; sourceTree = "<group>"; };
 		B335748E2573F59C006F0808 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B360D9F125754EC300F392F6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				2D504D082553314600FC7552 /* NewsCollection.swift */,
 				2D504CFB25532ABF00FC7552 /* CollectionViewCell.swift */,
 				2D504D0D25533AAD00FC7552 /* Article.swift */,
+				B360D9F125754EC300F392F6 /* WebViewController.swift */,
 			);
 			path = NewsPack;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				2D1F46A0254DB2C6007DF81D /* LoginView.swift in Sources */,
 				2D504D1E2553618D00FC7552 /* Country.swift in Sources */,
 				2D504D1225535F2F00FC7552 /* TableCases.swift in Sources */,
+				B360D9F225754EC300F392F6 /* WebViewController.swift in Sources */,
 				2D1F468D254DB131007DF81D /* SceneDelegate.swift in Sources */,
 				2D504CF9255316ED00FC7552 /* TabViewController.swift in Sources */,
 			);

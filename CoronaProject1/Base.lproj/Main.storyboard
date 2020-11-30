@@ -258,6 +258,7 @@
                                     <outlet property="cellView" destination="ONc-t0-051" id="wM2-2f-Uob"/>
                                     <outlet property="imageBackgroung" destination="lza-AE-LHw" id="m6V-Ur-ToJ"/>
                                     <outlet property="titleCell" destination="VPV-P9-oV9" id="sWC-Qv-v7t"/>
+                                    <segue destination="CeX-vb-Jwc" kind="show" identifier="Web" id="Wtj-ys-UN7"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -271,6 +272,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZf-Oq-mke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3876.811594202899" y="-665.625"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="9Bb-ju-wkl">
+            <objects>
+                <viewController id="CeX-vb-Jwc" customClass="WebViewController" customModule="CoronaProject1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DzS-he-cBQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="EWE-ir-IeS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Az2-aA-PKR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGh-0r-z7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4981" y="-666"/>
         </scene>
         <!--Cases-->
         <scene sceneID="zxM-9x-vMU">

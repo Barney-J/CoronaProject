@@ -7,6 +7,13 @@ private let reuseIdentifier = "Cell"
 class NewsCollection: UICollectionViewController {
     
     private var articleManager: News?
+    
+    let myRefreshControl: UIRefreshControl = {
+       let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "News"
@@ -39,6 +46,13 @@ class NewsCollection: UICollectionViewController {
            
         }
         dataTask.resume()
+        collectionView.refreshControl = myRefreshControl
+    }
+    
+    @objc private func refresh(sender: UIRefreshControl){
+        HUD.flash(.success, delay: 1.0)
+        collectionView.reloadData()
+        myRefreshControl.endRefreshing()
     }
 
 

@@ -5,6 +5,11 @@ import PKHUD
 class TableCases: UITableViewController{
     
     private var countryManager: [Country] = []
+//    let myRefreshControl: UIRefreshControl = {
+//        let refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+//        return refreshControl
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +43,15 @@ class TableCases: UITableViewController{
         }
         dataTask.resume()
     }
+  
     
+    @IBAction func refreshControl(_ sender: UIRefreshControl) {
+        tableView.reloadData()
+        sender.endRefreshing()
+        HUD.flash(.success, delay: 1.0)
+    }
+    
+   
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
     }

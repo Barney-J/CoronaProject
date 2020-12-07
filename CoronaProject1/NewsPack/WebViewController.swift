@@ -16,6 +16,7 @@ class WebViewController: UIViewController , WKUIDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.tabBarController?.tabBar.isHidden = true
         let myURL = try? URL(resolvingAliasFileAt: url!)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)

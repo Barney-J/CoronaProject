@@ -12,6 +12,7 @@ class Profile: UIViewController {
         username.text = UserManager.username
         
     }
+//MARK: setVC to LoginView
     @IBAction func goLoginView(_ sender: UIButton) {
         guard let navigationController = self.navigationController else {return}
         

@@ -5,13 +5,13 @@ import PKHUD
 class TableCases: UITableViewController{
     
     private var countryManager: [Country] = []
-    private let noInform = "--"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Cases"
         
         HUD.show(.progress)
-        
+//MARK: JSON
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         
@@ -39,7 +39,7 @@ class TableCases: UITableViewController{
         dataTask.resume()
     }
   
-    
+//MARK:refreshControl
     @IBAction func refreshControl(_ sender: UIRefreshControl) {
         tableView.reloadData()
         sender.endRefreshing()
@@ -48,16 +48,17 @@ class TableCases: UITableViewController{
     
    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = false
     }
-    
+//MARK: numberOfRowsInSection
     override func tableView(_ tableView: UITableView,
                numberOfRowsInSection section: Int) -> Int {
         
         return countryManager.count
     
     }
-    
+//MARK: cellForRowAt
     override func tableView(_ tableView: UITableView,
                                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
@@ -69,7 +70,7 @@ class TableCases: UITableViewController{
         
         return cell
     }
-
+//MARK: Prepare For Segue
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetail" {
             if  let indexPath = self.tableView.indexPathForSelectedRow {

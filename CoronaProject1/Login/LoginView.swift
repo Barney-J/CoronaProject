@@ -16,7 +16,7 @@ class LoginView: UIViewController {
         super.viewDidLoad()
         
         self.navigationController?.isNavigationBarHidden = true
-        
+                
         loginButton.isEnabled = false
         
         loginTextField.delegate = self
@@ -28,6 +28,7 @@ class LoginView: UIViewController {
         
         passwordTextField.isSecureTextEntry = true
         
+//MARK:AnimateLoginPasswordCollection
         loginPassword.frame = CGRect(x: verticalLogPassConstraint.constant,
                                       y: self.view.frame.height,
                                       width: 235, height: 36)
@@ -52,6 +53,8 @@ class LoginView: UIViewController {
         passwordTextField.resignFirstResponder()
     }
     
+    
+//MARK: LoginToPush
     @IBAction func loginToPush(_ sender: UIButton) {
                 
         if loginTextField.text?.isEmpty == true ,
@@ -103,22 +106,23 @@ class LoginView: UIViewController {
     }
 }
 
-extension LoginView : UITextFieldDelegate {
+// MARK: UITextFieldDelegate
+
+extension LoginView: UITextFieldDelegate {
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (string == " ") {
-            return false
+        func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            if (string == " ") {
+                return false
+            }
+            return true
         }
-        return true
-    }
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if self.loginTextField.text?.isEmpty != true,
-           self.passwordTextField.text?.isEmpty != true{
-            self.loginButton.isEnabled = true
-        }else{
-            self.loginButton.isEnabled = false
+        func textFieldDidEndEditing(_ textField: UITextField) {
+            if self.loginTextField.text?.isEmpty != true,
+               self.passwordTextField.text?.isEmpty != true{
+                self.loginButton.isEnabled = true
+            }else{
+                self.loginButton.isEnabled = false
+            }
         }
     }
-}
-

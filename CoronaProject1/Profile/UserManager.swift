@@ -13,6 +13,7 @@ struct UserManager:Codable {
         case username
     }
     
+//MARK: SaveUserInLoginTextField
     static var username:String! {
         get{
             return UserDefaults.standard.string(forKey: SettingsKey.username.rawValue)

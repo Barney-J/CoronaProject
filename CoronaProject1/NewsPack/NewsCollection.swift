@@ -9,7 +9,7 @@ var queue : OperationQueue?
 class NewsCollection: UICollectionViewController {
     
     private var articleManager: News?
-    
+//MARK: RefreshControl
     let myRefreshControl: UIRefreshControl = {
        let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
@@ -20,7 +20,7 @@ class NewsCollection: UICollectionViewController {
         super.viewDidLoad()
         self.navigationItem.title = "News"
         HUD.show(.progress)
-        
+//MARK: JSON
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         
@@ -51,18 +51,24 @@ class NewsCollection: UICollectionViewController {
         collectionView.refreshControl = myRefreshControl
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
+//MARK:collectionViewReload
     @objc private func refresh(sender: UIRefreshControl){
         HUD.flash(.success, delay: 1.0)
         collectionView.reloadData()
         myRefreshControl.endRefreshing()
     }
 
-
+//MARK:numberOfItemsInSection
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let articleManager = articleManager else {return 0}
         return articleManager.articles.count
     }
-
+//MARK: cellForItemAt
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier,
                                                       for: indexPath) as! CollectionViewCell
@@ -90,7 +96,7 @@ class NewsCollection: UICollectionViewController {
  
         return cell
     }
-    
+//MARK: PrepareForSegue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Web" {
             let webView: WebViewController = segue.destination as! WebViewController

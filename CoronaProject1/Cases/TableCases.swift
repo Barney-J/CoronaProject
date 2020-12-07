@@ -5,7 +5,7 @@ import PKHUD
 class TableCases: UITableViewController{
     
     private var countryManager: [Country] = []
-    
+    private let noInform = "--"
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Cases"
@@ -62,7 +62,7 @@ class TableCases: UITableViewController{
                                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",
                                                  for: indexPath) as! TableCasesCell
-        
+
         cell.country.text = countryManager[indexPath.row].country
         cell.infectedInt.text = String(countryManager[indexPath.row].infected ?? 0)
         cell.recoveredInt.text = String(countryManager[indexPath.row].recovered ?? 0)

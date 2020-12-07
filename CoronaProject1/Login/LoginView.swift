@@ -6,68 +6,43 @@ class LoginView: UIViewController {
     @IBOutlet weak var loginPassword: UIStackView!
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
     @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var centerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var verticalLogPassConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let keychain = Keychain(service: "com.example.github-token")
-
-        DispatchQueue.global().async {
-            do {
-                // Should be the secret invalidated when passcode is removed? If not then use `.WhenUnlocked`
-                try keychain
-                    .accessibility(.whenPasscodeSetThisDeviceOnly, authenticationPolicy: .userPresence)
-                    .set("01234567-89ab-cdef-0123-456789abcdef", key: "kishikawakatsumi")
-                
-                //let value = try keychain.get("kishikawakatsumi")
-               // print(value)
-            } catch let error {
-                print(error)
-            }
-        }
-        
-        
-        DispatchQueue.global().async {
-            do {
-                let password = try keychain
-                    .authenticationPrompt("Authenticate to login to server")
-                    .get("kishikawakatsumi")
-
-                print("password: \(password)")
-            } catch let error {
-                print(error)
-            }
-        }
-
         self.navigationController?.isNavigationBarHidden = true
+        
+        loginButton.isEnabled = false
         
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        
-        loginTextField.backgroundColor = loginButton.backgroundColor
-        passwordTextField.backgroundColor = loginButton.backgroundColor
-        
+
         loginTextField.layer.cornerRadius = 10
         passwordTextField.layer.cornerRadius = 10
         loginButton.layer.cornerRadius = 10
         
         passwordTextField.isSecureTextEntry = true
-
         
-        loginPassword.frame = CGRect(x: 238,
+        loginPassword.frame = CGRect(x: verticalLogPassConstraint.constant,
                                       y: self.view.frame.height,
                                       width: 235, height: 36)
 
         UIView.animate(withDuration: 3, delay: 0, options: [.transitionCurlUp]) {
-            self.loginPassword.frame = CGRect(x: 238, y: 89.5, width: 235, height: 36)
+            self.loginPassword.frame = CGRect(x: self.verticalLogPassConstraint.constant,
+                                              y: self.centerConstraint.constant,
+                                              width: 235, height: 36)
         } completion: { _ in
             self.loginPassword.didMoveToWindow()
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         loginTextField.text = UserManager.username
     }
     
@@ -78,8 +53,9 @@ class LoginView: UIViewController {
     }
     
     @IBAction func loginToPush(_ sender: UIButton) {
-                    
-        if loginTextField.text?.isEmpty == true , passwordTextField.text?.isEmpty == true {
+                
+        if loginTextField.text?.isEmpty == true ,
+           passwordTextField.text?.isEmpty == true {
             let alert = UIAlertController(title: "Login and password error",
                                           message: "Enter Login and password",
                                           preferredStyle: .alert)
@@ -108,7 +84,7 @@ class LoginView: UIViewController {
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }else if let _ = Double(loginTextField.text!){
-            let alert = UIAlertController(title: "Name error",
+            let alert = UIAlertController(title: "A name cannot be a number",
                                           message: "Enter name",
                                           preferredStyle: .alert)
             let okAction = UIAlertAction(title: "Ok",
@@ -134,6 +110,15 @@ extension LoginView : UITextFieldDelegate {
             return false
         }
         return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if self.loginTextField.text?.isEmpty != true,
+           self.passwordTextField.text?.isEmpty != true{
+            self.loginButton.isEnabled = true
+        }else{
+            self.loginButton.isEnabled = false
+        }
     }
 }
 

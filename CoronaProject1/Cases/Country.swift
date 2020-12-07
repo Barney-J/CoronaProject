@@ -14,8 +14,8 @@ struct Country: Decodable {
     init(infected: Int? = nil,
          recovered: Int? = nil,
          country: String? = nil) {
-            self.infected = infected
-            self.recovered = recovered
+            self.infected = infected!
+            self.recovered = recovered!
             self.country = country!
 
     }
@@ -26,4 +26,5 @@ struct Country: Decodable {
         country = try container.decode(String.self, forKey: .country)
         recovered = try? container.decode(Int.self, forKey: .recovered)
     }
+    
 }

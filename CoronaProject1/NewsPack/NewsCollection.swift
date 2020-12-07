@@ -4,6 +4,8 @@ import PKHUD
 
 private let reuseIdentifier = "Cell"
 
+var queue : OperationQueue?
+
 class NewsCollection: UICollectionViewController {
     
     private var articleManager: News?
@@ -71,45 +73,36 @@ class NewsCollection: UICollectionViewController {
         cell.authorCell.text = articleManager.articles[indexPath.row].author
         cell.authorCell.textColor = .red
         
+        let mainQueue = DispatchQueue.main
+        queue = OperationQueue()
         
-        let backgroungImageCell = articleManager.articles[indexPath.row].urlToImage ?? nil
-        guard let backgroungImage = backgroungImageCell else {return cell}
-        let url = URL(string: backgroungImage)
-            if let data = try? Data(contentsOf: url!)
-            {
-                cell.imageBackgroung.sizeToFit()
-                cell.imageBackgroung.contentMode = .scaleToFill
-                cell.imageBackgroung.image = UIImage(data: data)
-            }
+        let operation = BlockOperation{
+            let backgroungImageCell = articleManager.articles[indexPath.row].urlToImage
+            let url = URL(string: backgroungImageCell!)
+                if let data = try? Data(contentsOf: url!)
+                {
+                    mainQueue.async {
+                        cell.imageBackgroung.image = UIImage(data: data)
+                    }
+                }
+        }
+        queue?.addOperation(operation)
+ 
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        
         if segue.identifier == "Web" {
             let webView: WebViewController = segue.destination as! WebViewController
                 let cell = sender as! CollectionViewCell
-            let indexPath = self.collectionView!.indexPath(for: cell)
-            guard let articleManager = articleManager else {return}
-            let url = URL(string: articleManager.articles[indexPath?.row ?? 0].url!)
-                        guard let urlPush = url else {return}
             
-                        webView.url = urlPush
-
-            }
-        
-//        if segue.identifier == "Web" {
-//               let webView = segue.destination as! WebViewController
-//
-//           if let indexPaths = collectionView.indexPathsForSelectedItems {
-//            let indexPath = indexPaths
-//            guard let articleManager = articleManager else {return}
-//            let url = URL(string: articleManager.articles[indexPath].url!)
-//            guard let urlPush = url else {return}
-//
-//            webView.url = urlPush
-//           }
-//        }
+            guard let articleManager = articleManager else {return}
+            
+            guard let indexPath = self.collectionView!.indexPath(for: cell) else {return}
+            guard let articleManagerWithURL = articleManager.articles[indexPath.row].url else {return}
+            let url = URL(string: articleManagerWithURL)
+            
+            webView.url = url
+        }
     }
 }

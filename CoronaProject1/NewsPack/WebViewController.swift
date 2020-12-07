@@ -5,7 +5,7 @@ class WebViewController: UIViewController , WKUIDelegate{
 
     var webView: WKWebView!
     
-    var url = URL(string: " ")
+    var url: URL?
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
@@ -19,7 +19,5 @@ class WebViewController: UIViewController , WKUIDelegate{
         let myURL = try? URL(resolvingAliasFileAt: url!)
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
-        
-        print("!!!!!!!!!!!!\(myURL)")
     }
 }

@@ -94,6 +94,22 @@ class NewsCollection: UICollectionViewController {
         }
         queue?.addOperation(operation)
  
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        let string = articleManager.articles[indexPath.row].publishedAt
+        guard let inputDate  = dateFormatter.date(from: string) else { return cell}
+        
+        let prettydateFormatter = DateFormatter()
+        prettydateFormatter.dateStyle = .short
+        prettydateFormatter.timeStyle = .short
+        let outputDate = prettydateFormatter.string(from: inputDate)
+        if inputDate == inputDate {
+            cell.publishedCell.textColor = .red
+            cell.publishedCell.text = outputDate
+        }
+        
+
+        
         return cell
     }
 //MARK: PrepareForSegue

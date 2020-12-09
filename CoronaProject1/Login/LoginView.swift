@@ -57,36 +57,7 @@ class LoginView: UIViewController {
 //MARK: LoginToPush
     @IBAction func loginToPush(_ sender: UIButton) {
                 
-        if loginTextField.text?.isEmpty == true ,
-           passwordTextField.text?.isEmpty == true {
-            let alert = UIAlertController(title: "Login and password error",
-                                          message: "Enter Login and password",
-                                          preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok",
-                                          style: .cancel,
-                                          handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
-            
-        }else if passwordTextField.text?.isEmpty == true {
-            let alert = UIAlertController(title: "Password error",
-                                          message: "Enter password",
-                                          preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok",
-                                          style: .cancel,
-                                          handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
-        }else if loginTextField.text?.isEmpty == true {
-            let alert = UIAlertController(title: "Login error",
-                                          message: "Enter Login",
-                                          preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "Ok",
-                                          style: .cancel,
-                                          handler: nil)
-            alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)
-        }else if let _ = Double(loginTextField.text!){
+        if let _ = Double(loginTextField.text!){
             let alert = UIAlertController(title: "A name cannot be a number",
                                           message: "Enter name",
                                           preferredStyle: .alert)

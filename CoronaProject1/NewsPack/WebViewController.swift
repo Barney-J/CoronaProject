@@ -21,4 +21,5 @@ class WebViewController: UIViewController , WKUIDelegate{
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
     }
+    
 }

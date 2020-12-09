@@ -7,10 +7,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let notificationCenter = UNUserNotificationCenter.current()
     
-    struct NotificationHandlerStruct {
-        static var notifyTimer : Timer?
-    }
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     //MARK: NotificationCenter
         notificationCenter.requestAuthorization(options: [.alert,.sound]) { (granted, error) in

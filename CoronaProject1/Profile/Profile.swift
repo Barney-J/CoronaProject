@@ -14,6 +14,7 @@ class Profile: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
+        textField.inputView = picker
 //MARK: DataPicker
         picker.datePickerMode = .dateAndTime
         picker.preferredDatePickerStyle = .wheels
@@ -22,7 +23,7 @@ class Profile: UIViewController {
         textField.layer.cornerRadius = 10
         textField.layer.borderWidth = CGFloat(Float(1.0))
         textField.backgroundColor = .gray
-        textField.inputView = picker
+        textField.textAlignment = .center
 //MARK: toolbar
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -88,7 +89,11 @@ class Profile: UIViewController {
         content.body = "News"
         content.sound = UNNotificationSound.default
         
-        let components = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: datePicker)
+        let components = Calendar.current.dateComponents([.year,
+                                                          .month,
+                                                          .day,
+                                                          .hour,
+                                                          .minute], from: datePicker)
         dateComponents.calendar = Calendar.current
         dateComponents.year = components.year
         dateComponents.month = components.month
@@ -100,7 +105,6 @@ class Profile: UIViewController {
         let trigger = UNCalendarNotificationTrigger(
                  dateMatching: dateComponents, repeats: true)
         
-        //let uuidString = UUID().uuidString
         let request = UNNotificationRequest(identifier: "notification",
                     content: content, trigger: trigger)
 

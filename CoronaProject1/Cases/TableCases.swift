@@ -14,19 +14,13 @@ class TableCases: UITableViewController{
 //MARK: JSON
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-        
         guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true"
         )else { return }
-        
         let urlRequest = URLRequest(url: url)
-
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
-            
             if let data = data {
-                
                 let decoder = JSONDecoder()
                 let countries = try? decoder.decode([Country].self, from: data)
-                
                 DispatchQueue.main.async{
                     guard let countries = countries else {return}
                     self.countryManager = countries

@@ -7,7 +7,7 @@ private let reuseIdentifier = "Cell"
 var queue : OperationQueue?
 
 class NewsCollection: UICollectionViewController {
-    
+
     private var articleManager: News?
 //MARK: RefreshControl
     let myRefreshControl: UIRefreshControl = {
@@ -19,21 +19,18 @@ class NewsCollection: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "News"
+        
         HUD.show(.progress)
+        
 //MARK: JSON
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
-        
         guard let url = URL(string: "http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b305eaf8510c46a1918d14121688b90f"
         )else { return }
-        
         let urlRequest = URLRequest(url: url)
-
         let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
-            
             guard let data = data else {return}
             guard error == nil else {return}
-            
             do{
                 let decoder = JSONDecoder()
                 let newsCollection = try decoder.decode(News.self, from: data)
@@ -45,9 +42,9 @@ class NewsCollection: UICollectionViewController {
             }catch let error {
                 print(error)
             }
-           
         }
         dataTask.resume()
+
         collectionView.refreshControl = myRefreshControl
     }
     
@@ -78,10 +75,10 @@ class NewsCollection: UICollectionViewController {
         cell.titleCell.textColor = .red
         cell.authorCell.text = articleManager.articles[indexPath.row].author
         cell.authorCell.textColor = .red
-        
+//MARK: BlockOperation
         let mainQueue = DispatchQueue.main
         queue = OperationQueue()
-        
+        queue?.maxConcurrentOperationCount = 1
         let operation = BlockOperation{
             let backgroungImageCell = articleManager.articles[indexPath.row].urlToImage
             let url = URL(string: backgroungImageCell!)
@@ -93,23 +90,21 @@ class NewsCollection: UICollectionViewController {
                 }
         }
         queue?.addOperation(operation)
- 
+        
+        cell.publishedCell.textColor = .red
+//MARK: DateFormatter
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
         let string = articleManager.articles[indexPath.row].publishedAt
-        guard let inputDate  = dateFormatter.date(from: string) else { return cell}
+        let dataDate  = dateFormatter.date(from: string)
         
-        let prettydateFormatter = DateFormatter()
-        prettydateFormatter.dateStyle = .short
-        prettydateFormatter.timeStyle = .short
-        let outputDate = prettydateFormatter.string(from: inputDate)
-        if inputDate == inputDate {
-            cell.publishedCell.textColor = .red
-            cell.publishedCell.text = outputDate
+        let prettyDateFormatter = DateFormatter()
+        prettyDateFormatter.dateStyle = .short
+        prettyDateFormatter.timeStyle = .short
+        if let dateDate = dataDate{
+            let stringDate = prettyDateFormatter.string(from: dateDate)
+            cell.publishedCell.text = stringDate
         }
-        
-
-        
         return cell
     }
 //MARK: PrepareForSegue

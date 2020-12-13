@@ -4,10 +4,9 @@ import PKHUD
 
 private let reuseIdentifier = "Cell"
 
-var queue : OperationQueue?
-
 class NewsCollection: UICollectionViewController {
-
+    
+    var queue: OperationQueue?
     private var articleManager: News?
 //MARK: RefreshControl
     let myRefreshControl: UIRefreshControl = {
@@ -47,7 +46,25 @@ class NewsCollection: UICollectionViewController {
 
         collectionView.refreshControl = myRefreshControl
     }
+//MARK:shareWithFriends
     
+    @IBAction func openInstagramm(_ sender: UIBarButtonItem) {
+                if let url = URL(string: "instagram://user?username=barney_jackson"){
+                    UIApplication.shared.open(url)
+                }
+    }
+    
+    @IBAction func shareWithFriends(_ sender: UIBarButtonItem) {
+
+        let url = URL(string: "myApplicationCorona://")
+        let text = "take a look at the app - \(url!)"
+        
+        let activityViewController = UIActivityViewController(activityItems:[text],applicationActivities:nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController,animated: true,completion: nil)
+
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = false
@@ -94,7 +111,7 @@ class NewsCollection: UICollectionViewController {
         cell.publishedCell.textColor = .red
 //MARK: DateFormatter
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
         let string = articleManager.articles[indexPath.row].publishedAt
         let dataDate  = dateFormatter.date(from: string)
         

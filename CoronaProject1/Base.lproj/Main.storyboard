@@ -288,7 +288,18 @@
                             <outlet property="delegate" destination="oXJ-eN-s3M" id="vyi-Nw-dCO"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="KRu-2C-fbb"/>
+                    <navigationItem key="navigationItem" id="KRu-2C-fbb">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="camera" id="APk-vi-6eh">
+                            <connections>
+                                <action selector="openInstagramm:" destination="oXJ-eN-s3M" id="gpK-qv-5Wk"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="action" id="yRr-yL-ZWx">
+                            <connections>
+                                <action selector="shareWithFriends:" destination="oXJ-eN-s3M" id="4Tt-uG-rIe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rZf-Oq-mke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

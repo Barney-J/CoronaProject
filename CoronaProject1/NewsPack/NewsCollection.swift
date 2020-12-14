@@ -49,9 +49,13 @@ class NewsCollection: UICollectionViewController {
 //MARK:shareWithFriends
     
     @IBAction func openInstagramm(_ sender: UIBarButtonItem) {
-                if let url = URL(string: "instagram://user?username=barney_jackson"){
-                    UIApplication.shared.open(url)
-                }
+        let url = URL(string: "instagram://user?username=barney_jackson")!
+        if UIApplication.shared.canOpenURL(url){
+                UIApplication.shared.open(url)
+        }else{
+            let urlApp = URL(string: "https://www.instagram.com/barney_jackson")!
+            UIApplication.shared.open(urlApp)
+        }
     }
     
     @IBAction func shareWithFriends(_ sender: UIBarButtonItem) {

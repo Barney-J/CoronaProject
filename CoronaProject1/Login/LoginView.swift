@@ -3,16 +3,16 @@ import KeychainAccess
 
 class LoginView: UIViewController {
 
-    @IBOutlet weak var loginPassword: UIStackView!
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginPassword: UIStackView!
+    @IBOutlet private weak var loginTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
     
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var loginButton: UIButton!
     
-    @IBOutlet weak var centerConstraint: NSLayoutConstraint!
-    @IBOutlet weak var verticalLogPassConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var centerConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
     
-    let loginFieldValidation = LoginFieldValidation()
+    private let loginFieldValidation = LoginFieldValidation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class LoginView: UIViewController {
     
     
 //MARK: LoginToPush
-    @IBAction func loginToPush(_ sender: UIButton) {
+    @IBAction private func loginToPush(_ sender: UIButton) {
                 
         if let _ = Double(loginTextField.text!){
             let alert = UIAlertController(title: "A name cannot be a number",
@@ -91,7 +91,7 @@ extension LoginView: UITextFieldDelegate {
         }
 
         func textFieldDidEndEditing(_ textField: UITextField) {
-            if (loginFieldValidation.checkLoginAndPassword( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!)),
+            if loginFieldValidation.checkLoginAndPassword( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!),
                loginFieldValidation.checkLoginCount( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!){
                 loginButton.isEnabled = true
             }else{

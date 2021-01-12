@@ -71,6 +71,12 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>use Location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used to autofill the start/end location</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>текущая локация</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -24,8 +24,10 @@
 		2D504D272553814A00FC7552 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D504D262553814A00FC7552 /* InfoView.swift */; };
 		2D5A086E254F433400E2C186 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5A086C254F433400E2C186 /* Profile.swift */; };
 		547F286EA5466C8FE59A2A5F /* Pods_CoronaProject1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FEE036B09B94B01B763519 /* Pods_CoronaProject1.framework */; };
+		B30A848525AE05D600B89926 /* LoginFieldValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A848425AE05D600B89926 /* LoginFieldValidation.swift */; };
 		B335748F2573F59C006F0808 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B335748E2573F59C006F0808 /* GoogleService-Info.plist */; };
 		B360D9F225754EC300F392F6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B360D9F125754EC300F392F6 /* WebViewController.swift */; };
+		B3A8EBFD259A5D8100CD031B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8EBFC259A5D8100CD031B /* MapVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,8 +52,10 @@
 		2D504D262553814A00FC7552 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		2D5A086C254F433400E2C186 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7632581A14D73360FDECFC3B /* Pods-CoronaProject1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaProject1.debug.xcconfig"; path = "Target Support Files/Pods-CoronaProject1/Pods-CoronaProject1.debug.xcconfig"; sourceTree = "<group>"; };
+		B30A848425AE05D600B89926 /* LoginFieldValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFieldValidation.swift; sourceTree = "<group>"; };
 		B335748E2573F59C006F0808 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B360D9F125754EC300F392F6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B3A8EBFC259A5D8100CD031B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			children = (
 				2D3DDF1C25545CA600151218 /* UserManager.swift */,
 				2D5A086C254F433400E2C186 /* Profile.swift */,
+				B3A8EC03259A5DC900CD031B /* MapVC */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				2D1F469F254DB2C6007DF81D /* LoginView.swift */,
+				B30A848425AE05D600B89926 /* LoginFieldValidation.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -165,6 +171,14 @@
 				026F1953BD550A6EA018B0D0 /* Pods-CoronaProject1.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B3A8EC03259A5DC900CD031B /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				B3A8EBFC259A5D8100CD031B /* MapVC.swift */,
+			);
+			path = MapVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,8 +327,10 @@
 				2D504CFC25532AC000FC7552 /* CollectionViewCell.swift in Sources */,
 				2D1F46A0254DB2C6007DF81D /* LoginView.swift in Sources */,
 				2D504D1E2553618D00FC7552 /* Country.swift in Sources */,
+				B3A8EBFD259A5D8100CD031B /* MapVC.swift in Sources */,
 				2D504D1225535F2F00FC7552 /* TableCases.swift in Sources */,
 				B360D9F225754EC300F392F6 /* WebViewController.swift in Sources */,
+				B30A848525AE05D600B89926 /* LoginFieldValidation.swift in Sources */,
 				2D1F468D254DB131007DF81D /* SceneDelegate.swift in Sources */,
 				2D504CF9255316ED00FC7552 /* TabViewController.swift in Sources */,
 			);

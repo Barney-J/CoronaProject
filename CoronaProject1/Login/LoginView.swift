@@ -12,6 +12,8 @@ class LoginView: UIViewController {
     @IBOutlet weak var centerConstraint: NSLayoutConstraint!
     @IBOutlet weak var verticalLogPassConstraint: NSLayoutConstraint!
     
+    let loginFieldValidation = LoginFieldValidation()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -89,11 +91,10 @@ extension LoginView: UITextFieldDelegate {
         }
 
         func textFieldDidEndEditing(_ textField: UITextField) {
-            if self.loginTextField.text?.isEmpty != true,
-               self.passwordTextField.text?.isEmpty != true{
-                self.loginButton.isEnabled = true
+            if (loginFieldValidation.checkLoginAndPassword( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!)){
+                loginButton.isEnabled = true
             }else{
-                self.loginButton.isEnabled = false
+                loginButton.isEnabled = false
             }
         }
     }

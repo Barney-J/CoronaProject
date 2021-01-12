@@ -91,7 +91,8 @@ extension LoginView: UITextFieldDelegate {
         }
 
         func textFieldDidEndEditing(_ textField: UITextField) {
-            if (loginFieldValidation.checkLoginAndPassword( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!)){
+            if (loginFieldValidation.checkLoginAndPassword( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!)),
+               loginFieldValidation.checkLoginCount( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!){
                 loginButton.isEnabled = true
             }else{
                 loginButton.isEnabled = false

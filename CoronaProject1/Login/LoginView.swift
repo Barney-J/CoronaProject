@@ -14,8 +14,6 @@ class LoginView: UIViewController {
     
     private let protocolValidator: FieldValidator = ComplexPasswordFieldValidator()
     
-    private let loginFieldValidation = LoginFieldValidation()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -92,11 +90,7 @@ extension LoginView: UITextFieldDelegate {
         }
 
         func textFieldDidEndEditing(_ textField: UITextField) {
-            if protocolValidator.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!){
-                loginButton.isEnabled = true
-            }else{
-                loginButton.isEnabled = false
-            }
+            loginButton.isEnabled = protocolValidator.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
         }
     }
 

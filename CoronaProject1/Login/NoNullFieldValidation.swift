@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
  
-class LoginFieldValidation: FieldValidator {
+class NoNullFieldValidation: FieldValidator {
     
     public func checkLoginAndPassword (_ login: String ,_ password: String) -> Bool{
         if ((login != "") && (password != "")){

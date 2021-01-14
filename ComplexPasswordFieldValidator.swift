@@ -1,16 +1,17 @@
 import Foundation
-import UIKit
- 
-class LoginFieldValidation {
+
+
+class ComplexPasswordFieldValidator: FieldValidator {
     
-    public func checkLoginAndPassword ( _loginText login: String , _passwordText password: String) -> Bool{
+    public func checkLoginAndPassword (_ login: String ,_ password: String) -> Bool{
         if ((login != "") && (password != "")){
             return true
         }else {
             return false
         }
     }
-    public func checkLoginCount( _loginText login: String , _passwordText password: String) -> Bool{
+    
+    private func checkLoginAndPasswordCount(_ login: String ,_ password: String) -> Bool{
         if login.count <= 8 , password.count >= 9{
             return true
         }else{

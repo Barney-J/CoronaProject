@@ -12,6 +12,8 @@ class LoginView: UIViewController {
     @IBOutlet private weak var centerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
     
+    private let protocolValidator: FieldValidator = ComplexPasswordFieldValidator()
+    
     private let loginFieldValidation = LoginFieldValidation()
     
     override func viewDidLoad() {
@@ -24,8 +26,7 @@ class LoginView: UIViewController {
         loginTextField.delegate = self
         passwordTextField.delegate = self
 
-        loginTextField.layer.cornerRadius = 10
-        passwordTextField.layer.cornerRadius = 10
+        passwordTextField.layer.cornerRadius = 5
         loginButton.layer.cornerRadius = 10
         
         passwordTextField.isSecureTextEntry = true
@@ -91,11 +92,18 @@ extension LoginView: UITextFieldDelegate {
         }
 
         func textFieldDidEndEditing(_ textField: UITextField) {
-            if loginFieldValidation.checkLoginAndPassword( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!),
-               loginFieldValidation.checkLoginCount( _loginText: loginTextField.text!, _passwordText: passwordTextField.text!){
+            if protocolValidator.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!){
                 loginButton.isEnabled = true
             }else{
                 loginButton.isEnabled = false
             }
         }
     }
+
+
+class CustomLoginTextField: UITextField{
+    
+    override func borderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: UIEdgeInsets.init(top: 25, left: 25, bottom: 25, right: 25))
+    }
+}

@@ -73,12 +73,14 @@ PODS:
   - nanopb/encode (2.30906.0)
   - PKHUD (5.3.0)
   - PromisesObjC (1.2.11)
+  - Swinject (2.7.1)
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Crashlytics
   - KeychainAccess
   - PKHUD (~> 5.0)
+  - Swinject
 
 SPEC REPOS:
   trunk:
@@ -95,6 +97,7 @@ SPEC REPOS:
     - nanopb
     - PKHUD
     - PromisesObjC
+    - Swinject
 
 SPEC CHECKSUMS:
   Firebase: 78e8dd2e39d653de6270432ad84fe8b59f7bf4e8
@@ -110,7 +113,8 @@ SPEC CHECKSUMS:
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
   PKHUD: 98f3e4bc904b9c916f1c5bb6d765365b5357291b
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: b60ea7192924bfd19680e75a6540d4ffe33f9ac8
+PODFILE CHECKSUM: 43066c1bd53a7eaa4beb126ba441e23217809772
 
 COCOAPODS: 1.10.0

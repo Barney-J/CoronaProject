@@ -12,7 +12,9 @@ class LoginView: UIViewController {
     @IBOutlet private weak var centerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
     
-    private let protocolValidator: FieldValidator = ComplexPasswordFieldValidator()
+    private let protocolValidator: FieldValidator = ComplexLogPassFieldValidator()
+    
+    private let conteinerFieldValidator = Dependency.conteiner.resolve(FieldValidator.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()

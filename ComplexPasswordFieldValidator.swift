@@ -1,7 +1,7 @@
 import Foundation
 
 
-class ComplexPasswordFieldValidator: FieldValidator {
+class ComplexLogPassFieldValidator: FieldValidator {
     
     public func checkLoginAndPassword (_ login: String ,_ password: String) -> Bool{
         if ((login != "") && (checkPasswordCount(password))){

@@ -6,6 +6,7 @@ target 'CoronaProject1' do
   	pod 'Firebase/Analytics'
 	pod 'Firebase/Crashlytics'
 	pod 'KeychainAccess'
+	pod 'Swinject'
 
 
 end

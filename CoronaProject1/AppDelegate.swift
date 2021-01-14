@@ -1,7 +1,7 @@
 import UIKit
 import Firebase
 import UserNotifications
-
+import Swinject
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         notificationCenter.delegate = self
         sendNotifications()
+        let conteiner = Container()
+        conteiner.register(FieldValidator.self) {_ in ComplexLogPassFieldValidator()}
+        Dependency.conteiner = conteiner
+        
+        
         FirebaseApp.configure()
 
         return true

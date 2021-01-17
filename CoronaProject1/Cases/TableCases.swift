@@ -4,42 +4,22 @@ import PKHUD
 
 class TableCases: UITableViewController{
     
-    private var countryManager: [Country] = []
+    var countryManager: [Country] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Cases"
         
         HUD.show(.progress)
-//MARK: JSON
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        guard let url = URL(string: "https://api.apify.com/v2/key-value-stores/tVaYRsPHLjNdNBu7S/records/LATEST?disableRedirect=true"
-        )else { return }
-        let urlRequest = URLRequest(url: url)
-        let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
-            if let data = data {
-                let decoder = JSONDecoder()
-                let countries = try? decoder.decode([Country].self, from: data)
-                DispatchQueue.main.async{
-                    guard let countries = countries else {return}
-                    self.countryManager = countries
-                    self.tableView.reloadData()
-                    HUD.flash(.success, delay: 1.0)
-                }
-
-            }
-        }
-        dataTask.resume()
+        jsonCases()
+        HUD.flash(.success, delay: 1.0)
     }
   
 //MARK:refreshControl
     @IBAction private func refreshControl(_ sender: UIRefreshControl) {
-        tableView.reloadData()
+        jsonCases()
         sender.endRefreshing()
-        HUD.flash(.success, delay: 1.0)
     }
-    
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -48,7 +28,6 @@ class TableCases: UITableViewController{
 //MARK: numberOfRowsInSection
     override func tableView(_ tableView: UITableView,
                numberOfRowsInSection section: Int) -> Int {
-        
         return countryManager.count
     
     }

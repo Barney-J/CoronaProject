@@ -7,7 +7,8 @@ private let reuseIdentifier = "Cell"
 class NewsCollection: UICollectionViewController {
     
     private var queue: OperationQueue?
-    private var articleManager: News?
+    var articleManager: News?
+    
 //MARK: RefreshControl
     private let myRefreshControl: UIRefreshControl = {
        let refreshControl = UIRefreshControl()
@@ -20,32 +21,11 @@ class NewsCollection: UICollectionViewController {
         self.navigationItem.title = "News"
         
         HUD.show(.progress)
-        
-//MARK: JSON
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        guard let url = URL(string: "http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b305eaf8510c46a1918d14121688b90f"
-        )else { return }
-        let urlRequest = URLRequest(url: url)
-        let dataTask = session.dataTask(with: urlRequest) { (data, response, error) in
-            guard let data = data else {return}
-            guard error == nil else {return}
-            do{
-                let decoder = JSONDecoder()
-                let newsCollection = try decoder.decode(News.self, from: data)
-                DispatchQueue.main.async{
-                    self.articleManager = newsCollection
-                    self.collectionView.reloadData()
-                    HUD.flash(.success, delay: 1.0)
-                }
-            }catch let error {
-                print(error)
-            }
-        }
-        dataTask.resume()
-
+        jsonArticle()
+        HUD.flash(.success, delay: 1.0)
         collectionView.refreshControl = myRefreshControl
     }
+
 //MARK:shareWithFriends
     
     @IBAction private func openInstagramm(_ sender: UIBarButtonItem) {
@@ -59,14 +39,12 @@ class NewsCollection: UICollectionViewController {
     }
     
     @IBAction private func shareWithFriends(_ sender: UIBarButtonItem) {
-
         let url = URL(string: "myApplicationCorona://")
         let text = "take a look at the app - \(url!)"
         
         let activityViewController = UIActivityViewController(activityItems:[text],applicationActivities:nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         present(activityViewController,animated: true,completion: nil)
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -76,8 +54,7 @@ class NewsCollection: UICollectionViewController {
     
 //MARK:collectionViewReload
     @objc private func refresh(sender: UIRefreshControl){
-        HUD.flash(.success, delay: 1.0)
-        collectionView.reloadData()
+        jsonArticle()
         myRefreshControl.endRefreshing()
     }
 

@@ -26,6 +26,8 @@
 		547F286EA5466C8FE59A2A5F /* Pods_CoronaProject1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20FEE036B09B94B01B763519 /* Pods_CoronaProject1.framework */; };
 		B335748F2573F59C006F0808 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B335748E2573F59C006F0808 /* GoogleService-Info.plist */; };
 		B360D9F225754EC300F392F6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B360D9F125754EC300F392F6 /* WebViewController.swift */; };
+		B364E3FB25B479B0006C0FB0 /* JSONArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364E3FA25B479B0006C0FB0 /* JSONArticle.swift */; };
+		B364E3FE25B48FB8006C0FB0 /* JSONCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364E3FD25B48FB8006C0FB0 /* JSONCases.swift */; };
 		B3A8EBFD259A5D8100CD031B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8EBFC259A5D8100CD031B /* MapVC.swift */; };
 		B3F42F6225B0AAE50058D5A8 /* ComplexPasswordFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F6125B0AAE50058D5A8 /* ComplexPasswordFieldValidator.swift */; };
 		B3F42F6525B0AAF20058D5A8 /* ProtocolValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F6425B0AAF20058D5A8 /* ProtocolValidator.swift */; };
@@ -56,6 +58,8 @@
 		7632581A14D73360FDECFC3B /* Pods-CoronaProject1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaProject1.debug.xcconfig"; path = "Target Support Files/Pods-CoronaProject1/Pods-CoronaProject1.debug.xcconfig"; sourceTree = "<group>"; };
 		B335748E2573F59C006F0808 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B360D9F125754EC300F392F6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		B364E3FA25B479B0006C0FB0 /* JSONArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONArticle.swift; sourceTree = "<group>"; };
+		B364E3FD25B48FB8006C0FB0 /* JSONCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCases.swift; sourceTree = "<group>"; };
 		B3A8EBFC259A5D8100CD031B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		B3F42F6125B0AAE50058D5A8 /* ComplexPasswordFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexPasswordFieldValidator.swift; sourceTree = SOURCE_ROOT; };
 		B3F42F6425B0AAF20058D5A8 /* ProtocolValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolValidator.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 				2D504CFB25532ABF00FC7552 /* CollectionViewCell.swift */,
 				2D504D0D25533AAD00FC7552 /* Article.swift */,
 				B360D9F125754EC300F392F6 /* WebViewController.swift */,
+				B364E3FA25B479B0006C0FB0 /* JSONArticle.swift */,
 			);
 			path = NewsPack;
 			sourceTree = "<group>";
@@ -129,6 +134,7 @@
 				2D504D182553615B00FC7552 /* TableCasesCell.swift */,
 				2D504D1D2553618D00FC7552 /* Country.swift */,
 				2D504D262553814A00FC7552 /* InfoView.swift */,
+				B364E3FD25B48FB8006C0FB0 /* JSONCases.swift */,
 			);
 			path = Cases;
 			sourceTree = "<group>";
@@ -338,7 +344,9 @@
 				B3F42F8525B0C9D70058D5A8 /* Dependency.swift in Sources */,
 				B3F42F6225B0AAE50058D5A8 /* ComplexPasswordFieldValidator.swift in Sources */,
 				2D504D1225535F2F00FC7552 /* TableCases.swift in Sources */,
+				B364E3FE25B48FB8006C0FB0 /* JSONCases.swift in Sources */,
 				B360D9F225754EC300F392F6 /* WebViewController.swift in Sources */,
+				B364E3FB25B479B0006C0FB0 /* JSONArticle.swift in Sources */,
 				2D1F468D254DB131007DF81D /* SceneDelegate.swift in Sources */,
 				2D504CF9255316ED00FC7552 /* TabViewController.swift in Sources */,
 			);

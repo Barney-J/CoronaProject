@@ -31,18 +31,18 @@ class LoginView: UIViewController {
         
         passwordTextField.isSecureTextEntry = true
         
-//MARK:AnimateLoginPasswordCollection
-        loginPassword.frame = CGRect(x: verticalLogPassConstraint.constant,
-                                      y: self.view.frame.height,
-                                      width: 235, height: 36)
-
-        UIView.animate(withDuration: 3, delay: 0, options: [.transitionCurlUp]) {
-            self.loginPassword.frame = CGRect(x: self.verticalLogPassConstraint.constant,
-                                              y: self.centerConstraint.constant,
+        //MARK:AnimateLoginPasswordCollection
+                loginPassword.frame = CGRect(x: verticalLogPassConstraint.constant,
+                                              y: self.view.frame.height,
                                               width: 235, height: 36)
-        } completion: { _ in
-            self.loginPassword.didMoveToWindow()
-        }
+
+                UIView.animate(withDuration: 3, delay: 0, options: [.transitionCurlUp]) {
+                    self.loginPassword.frame = CGRect(x: self.verticalLogPassConstraint.constant,
+                                                      y: self.centerConstraint.constant,
+                                                      width: 235, height: 36)
+                } completion: { _ in
+                    self.loginPassword.didMoveToWindow()
+                }
     }
     
     override func viewWillAppear(_ animated: Bool) {

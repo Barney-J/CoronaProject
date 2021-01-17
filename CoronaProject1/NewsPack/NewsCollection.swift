@@ -6,10 +6,10 @@ private let reuseIdentifier = "Cell"
 
 class NewsCollection: UICollectionViewController {
     
-    var queue: OperationQueue?
+    private var queue: OperationQueue?
     private var articleManager: News?
 //MARK: RefreshControl
-    let myRefreshControl: UIRefreshControl = {
+    private let myRefreshControl: UIRefreshControl = {
        let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         return refreshControl
@@ -48,7 +48,7 @@ class NewsCollection: UICollectionViewController {
     }
 //MARK:shareWithFriends
     
-    @IBAction func openInstagramm(_ sender: UIBarButtonItem) {
+    @IBAction private func openInstagramm(_ sender: UIBarButtonItem) {
         let url = URL(string: "instagram://user?username=barney_jackson")!
         if UIApplication.shared.canOpenURL(url){
                 UIApplication.shared.open(url)
@@ -58,7 +58,7 @@ class NewsCollection: UICollectionViewController {
         }
     }
     
-    @IBAction func shareWithFriends(_ sender: UIBarButtonItem) {
+    @IBAction private func shareWithFriends(_ sender: UIBarButtonItem) {
 
         let url = URL(string: "myApplicationCorona://")
         let text = "take a look at the app - \(url!)"

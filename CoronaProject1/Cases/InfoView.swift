@@ -2,8 +2,8 @@ import UIKit
 
 class InfoView: UIViewController {
 
-    @IBOutlet weak var infectedLabel: UILabel!
-    @IBOutlet weak var recoveredLabel: UILabel!
+    @IBOutlet private weak var infectedLabel: UILabel!
+    @IBOutlet private weak var recoveredLabel: UILabel!
     
     var infectedInfoView = ""
     var recoveredInfoView = ""

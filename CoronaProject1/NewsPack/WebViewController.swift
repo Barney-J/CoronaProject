@@ -3,7 +3,7 @@ import WebKit
 
 class WebViewController: UIViewController , WKUIDelegate{
 
-    var webView: WKWebView!
+    private var webView: WKWebView!
     
     var url: URL?
     

@@ -34,7 +34,7 @@ class TableCases: UITableViewController{
     }
   
 //MARK:refreshControl
-    @IBAction func refreshControl(_ sender: UIRefreshControl) {
+    @IBAction private func refreshControl(_ sender: UIRefreshControl) {
         tableView.reloadData()
         sender.endRefreshing()
         HUD.flash(.success, delay: 1.0)

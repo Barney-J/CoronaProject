@@ -99,8 +99,8 @@ class NewsCollection: UICollectionViewController {
         let prettyDateFormatter = DateFormatter()
         prettyDateFormatter.dateStyle = .short
         prettyDateFormatter.timeStyle = .short
-        if let dateDate = dataDate{
-            let stringDate = prettyDateFormatter.string(from: dateDate)
+        if let dataDate = dataDate{
+            let stringDate = prettyDateFormatter.string(from: dataDate)
             cell.publishedCell.text = stringDate
         }
         return cell

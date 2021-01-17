@@ -83,14 +83,12 @@ class LoginView: UIViewController {
 // MARK: UITextFieldDelegate
 
 extension LoginView: UITextFieldDelegate {
-    
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             if (string == " ") {
                 return false
             }
             return true
         }
-
         func textFieldDidEndEditing(_ textField: UITextField) {
             loginButton.isEnabled = protocolValidator.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
         }
@@ -98,7 +96,6 @@ extension LoginView: UITextFieldDelegate {
 
 
 class CustomLoginTextField: UITextField{
-    
     override func borderRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: UIEdgeInsets.init(top: 25, left: 25, bottom: 25, right: 25))
     }

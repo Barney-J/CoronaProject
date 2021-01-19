@@ -73,7 +73,7 @@ class LoginView: UIViewController {
             let viewControllers = [TabViewController()]
             
             guard let navigationController = self.navigationController else {return}
-            navigationController.setViewControllers(viewControllers, animated: true)
+            navigationController.setViewControllers(viewControllers, animated: false)
         }
     }
 }

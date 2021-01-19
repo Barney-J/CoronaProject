@@ -2,6 +2,6 @@ import Foundation
 import Swinject
 
 
-class Dependency{
+class Dependency {
     static var conteiner = Container()
 }

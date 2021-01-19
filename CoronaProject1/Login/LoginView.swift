@@ -1,5 +1,6 @@
 import UIKit
 import KeychainAccess
+import Swinject
 
 class LoginView: UIViewController {
 
@@ -28,7 +29,25 @@ class LoginView: UIViewController {
         self.loginButton.layer.cornerRadius = 10
         self.animateLoginPassword()
         self.passwordTextField.isSecureTextEntry = true
+        self.styleScreen()
     }
+    
+    func styleScreen() {
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component( .hour , from: date)
+        
+        if hour <= 18 && hour >= 8 {
+            let conteinerStyle = Dependency.conteiner.resolve(LightStyle.self, name: "Light")
+            self.view.backgroundColor = conteinerStyle?.bgColor
+            self.loginTextField.textColor = conteinerStyle?.textColor
+        }else{
+            let conteinerStyle = Dependency.conteiner.resolve(DarkStyle.self, name: "Dark")
+            self.view.backgroundColor = conteinerStyle?.bgColor
+            self.loginTextField.textColor = conteinerStyle?.textColor
+        }
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -92,9 +111,9 @@ extension LoginView: UITextFieldDelegate {
         }
     }
 
-
-class CustomLoginTextField: UITextField{
-    override func borderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets.init(top: 25, left: 25, bottom: 25, right: 25))
-    }
-}
+//
+//class CustomLoginTextField: UITextField{
+//    override func borderRect(forBounds bounds: CGRect) -> CGRect {
+//        return bounds.inset(by: UIEdgeInsets.init(top: 25, left: 25, bottom: 25, right: 25))
+//    }
+//}

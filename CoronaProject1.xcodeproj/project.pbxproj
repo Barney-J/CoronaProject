@@ -121,8 +121,8 @@
 				2D504D082553314600FC7552 /* NewsCollection.swift */,
 				2D504CFB25532ABF00FC7552 /* CollectionViewCell.swift */,
 				2D504D0D25533AAD00FC7552 /* Article.swift */,
-				B360D9F125754EC300F392F6 /* WebViewController.swift */,
 				B364E3FA25B479B0006C0FB0 /* JSONArticle.swift */,
+				B360D9F125754EC300F392F6 /* WebViewController.swift */,
 			);
 			path = NewsPack;
 			sourceTree = "<group>";

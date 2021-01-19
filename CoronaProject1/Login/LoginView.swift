@@ -21,16 +21,27 @@ class LoginView: UIViewController {
         
         self.navigationController?.isNavigationBarHidden = true
                 
-        loginButton.isEnabled = false
-        
-        loginTextField.delegate = self
-        passwordTextField.delegate = self
-
-        passwordTextField.layer.cornerRadius = 5
-        loginButton.layer.cornerRadius = 10
-        
-        passwordTextField.isSecureTextEntry = true
-        
+        self.loginButton.isEnabled = false
+        self.loginTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.passwordTextField.layer.cornerRadius = 5
+        self.loginButton.layer.cornerRadius = 10
+        self.animateLoginPassword()
+        self.passwordTextField.isSecureTextEntry = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.loginTextField.text = UserManager.username
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        self.loginTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+    }
+    
+    private func animateLoginPassword (){
         //MARK:AnimateLoginPasswordCollection
                 loginPassword.frame = CGRect(x: verticalLogPassConstraint.constant,
                                               y: self.view.frame.height,
@@ -44,19 +55,6 @@ class LoginView: UIViewController {
                     self.loginPassword.didMoveToWindow()
                 }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        loginTextField.text = UserManager.username
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        loginTextField.resignFirstResponder()
-        passwordTextField.resignFirstResponder()
-    }
-    
-    
 //MARK: LoginToPush
     @IBAction private func loginToPush(_ sender: UIButton) {
                 

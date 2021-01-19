@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 
 class DarkStyle: StyleLoginVCManager {
-    var bgColor: UIColor = .white
-    var textColor: UIColor = .green
+    var bgColor: UIColor = .darkGray
+    var textColor: UIColor = .darkText
 }
 

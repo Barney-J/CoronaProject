@@ -38,11 +38,11 @@ class LoginView: UIViewController {
         let hour = calendar.component( .hour , from: date)
         
         if hour <= 18 && hour >= 8 {
-            let conteinerStyle = Dependency.conteiner.resolve(LightStyle.self, name: "Light")
+            let conteinerStyle = Dependency.conteiner.resolve(StyleLoginVCManager.self, name: "Light")
             self.view.backgroundColor = conteinerStyle?.bgColor
             self.loginTextField.textColor = conteinerStyle?.textColor
         }else{
-            let conteinerStyle = Dependency.conteiner.resolve(DarkStyle.self, name: "Dark")
+            let conteinerStyle = Dependency.conteiner.resolve(StyleLoginVCManager.self, name: "Dark")
             self.view.backgroundColor = conteinerStyle?.bgColor
             self.loginTextField.textColor = conteinerStyle?.textColor
         }

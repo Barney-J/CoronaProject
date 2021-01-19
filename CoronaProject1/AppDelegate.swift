@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sendNotifications()
         let conteiner = Container()
         conteiner.register(FieldValidator.self) {_ in ComplexLogPassFieldValidator()}
-        conteiner.register(LoginVCManager.self, name: "Light") { _ in LightStyle()}
-        conteiner.register(LoginVCManager.self, name: "Dark") { _ in DarkStyle()}
+        conteiner.register(StyleLoginVCManager.self, name: "Light") { _ in LightStyle()}
+        conteiner.register(StyleLoginVCManager.self, name: "Dark") { _ in DarkStyle()}
         Dependency.conteiner = conteiner
         
         

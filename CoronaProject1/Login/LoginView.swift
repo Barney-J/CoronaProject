@@ -16,6 +16,7 @@ class LoginView: UIViewController {
     private let protocolValidator: FieldValidator = ComplexLogPassFieldValidator()
     
     private let conteinerFieldValidator = Dependency.conteiner.resolve(FieldValidator.self)
+    private let conteinerStyleLoginVC = Dependency.conteiner.resolve(ProtocolTimerControl.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,25 +30,9 @@ class LoginView: UIViewController {
         self.loginButton.layer.cornerRadius = 10
         self.animateLoginPassword()
         self.passwordTextField.isSecureTextEntry = true
-        self.styleScreen()
-    }
-    
-    func styleScreen() {
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component( .hour , from: date)
-        
-        if hour <= 18 && hour >= 8 {
-            let conteinerStyle = Dependency.conteiner.resolve(StyleLoginVCManager.self, name: "Light")
-            self.view.backgroundColor = conteinerStyle?.bgColor
-            self.loginTextField.textColor = conteinerStyle?.textColor
-        }else{
-            let conteinerStyle = Dependency.conteiner.resolve(StyleLoginVCManager.self, name: "Dark")
-            self.view.backgroundColor = conteinerStyle?.bgColor
-            self.loginTextField.textColor = conteinerStyle?.textColor
-        }
-    }
+        self.conteinerStyleLoginVC?.setStyle(self.loginTextField, self.view)
 
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -111,9 +96,3 @@ extension LoginView: UITextFieldDelegate {
         }
     }
 
-//
-//class CustomLoginTextField: UITextField{
-//    override func borderRect(forBounds bounds: CGRect) -> CGRect {
-//        return bounds.inset(by: UIEdgeInsets.init(top: 25, left: 25, bottom: 25, right: 25))
-//    }
-//}

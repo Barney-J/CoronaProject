@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         conteiner.register(FieldValidator.self) {_ in ComplexLogPassFieldValidator()}
         conteiner.register(StyleLoginVCManager.self, name: "Light") { _ in LightStyle()}
         conteiner.register(StyleLoginVCManager.self, name: "Dark") { _ in DarkStyle()}
+        conteiner.register(ProtocolTimerControl.self) { _ in TimerControl()}
         Dependency.conteiner = conteiner
         
         

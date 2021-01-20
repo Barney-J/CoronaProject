@@ -5,7 +5,6 @@ class ComplexLogPassFieldValidator: FieldValidator {
     
     public func checkLoginAndPassword (_ login: String ,_ password: String) -> Bool{
         if ((login != "") && (checkPasswordCount(password))){
-            
             return true
         }else {
             return false

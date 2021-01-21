@@ -7,9 +7,9 @@ import Swinject
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let notificationCenter = UNUserNotificationCenter.current()
+    var logger: Logger?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
     //MARK: NotificationCenter
         notificationCenter.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
             guard granted else {return}
@@ -19,17 +19,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         notificationCenter.delegate = self
         sendNotifications()
-        let conteiner = Container()
-        conteiner.register(FieldValidator.self) {_ in
+        let container = Container()
+        container.register(FieldValidator.self) {_ in
             let complexLogPassFieldValidator = ComplexLogPassFieldValidator()
             let passwordValidator = AttemptsCountValidator(fieldValidator: complexLogPassFieldValidator)
             return passwordValidator}
 //        conteiner.register(FieldValidator.self) {_ in ComplexLogPassFieldValidator()}
-        conteiner.register(StyleLoginVCManager.self, name: "Light") { _ in LightStyle()}
-        conteiner.register(StyleLoginVCManager.self, name: "Dark") { _ in DarkStyle()}
-        conteiner.register(ProtocolTimerControl.self) { _ in TimerControl()}
-        Dependency.conteiner = conteiner
+        container.register(StyleLoginVCManager.self, name: "Light") { _ in LightStyle()}
+        container.register(StyleLoginVCManager.self, name: "Dark") { _ in DarkStyle()}
+        container.register(ProtocolTimerControl.self) { _ in TimerControl()}
+        container.register(EventManager.self) {_ in ListEventManager()}.inObjectScope(.container)
+        Dependency.container = container
         
+        logger = Logger(eventManager: Dependency.container.resolve(EventManager.self)!)
         
         FirebaseApp.configure()
 

@@ -30,6 +30,7 @@
 		B364E3FE25B48FB8006C0FB0 /* JSONCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364E3FD25B48FB8006C0FB0 /* JSONCases.swift */; };
 		B39DA44325B8E0EF009A8316 /* TimerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39DA44225B8E0EF009A8316 /* TimerControl.swift */; };
 		B39DA44625B8E103009A8316 /* ProtocolTimerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39DA44525B8E103009A8316 /* ProtocolTimerControl.swift */; };
+		B39E1A4325B9EDFE00659553 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E1A4225B9EDFE00659553 /* EventManager.swift */; };
 		B3A2967E25B743280080E41C /* StyleLoginVCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2967D25B743280080E41C /* StyleLoginVCManager.swift */; };
 		B3A2968225B752AF0080E41C /* LightStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2968125B752AF0080E41C /* LightStyle.swift */; };
 		B3A2968525B752C10080E41C /* DarkStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2968425B752C10080E41C /* DarkStyle.swift */; };
@@ -67,6 +68,7 @@
 		B364E3FD25B48FB8006C0FB0 /* JSONCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCases.swift; sourceTree = "<group>"; };
 		B39DA44225B8E0EF009A8316 /* TimerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControl.swift; sourceTree = "<group>"; };
 		B39DA44525B8E103009A8316 /* ProtocolTimerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolTimerControl.swift; sourceTree = "<group>"; };
+		B39E1A4225B9EDFE00659553 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
 		B3A2967D25B743280080E41C /* StyleLoginVCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleLoginVCManager.swift; sourceTree = "<group>"; };
 		B3A2968125B752AF0080E41C /* LightStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStyle.swift; sourceTree = "<group>"; };
 		B3A2968425B752C10080E41C /* DarkStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkStyle.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				2D3DDF1C25545CA600151218 /* UserManager.swift */,
 				2D5A086C254F433400E2C186 /* Profile.swift */,
+				B39E1A4225B9EDFE00659553 /* EventManager.swift */,
 				B3A8EC03259A5DC900CD031B /* MapVC */,
 			);
 			path = Profile;
@@ -356,6 +359,7 @@
 				2D504CFC25532AC000FC7552 /* CollectionViewCell.swift in Sources */,
 				2D1F46A0254DB2C6007DF81D /* LoginView.swift in Sources */,
 				2D504D1E2553618D00FC7552 /* Country.swift in Sources */,
+				B39E1A4325B9EDFE00659553 /* EventManager.swift in Sources */,
 				B3A8EBFD259A5D8100CD031B /* MapVC.swift in Sources */,
 				B39DA44625B8E103009A8316 /* ProtocolTimerControl.swift in Sources */,
 				B39DA44325B8E0EF009A8316 /* TimerControl.swift in Sources */,

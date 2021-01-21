@@ -20,7 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         notificationCenter.delegate = self
         sendNotifications()
         let conteiner = Container()
-        conteiner.register(FieldValidator.self) {_ in ComplexLogPassFieldValidator()}
+        conteiner.register(FieldValidator.self) {_ in
+            let complexLogPassFieldValidator = ComplexLogPassFieldValidator()
+            let passwordValidator = AttemptsCountValidator(fieldValidator: complexLogPassFieldValidator)
+            return passwordValidator}
+//        conteiner.register(FieldValidator.self) {_ in ComplexLogPassFieldValidator()}
         conteiner.register(StyleLoginVCManager.self, name: "Light") { _ in LightStyle()}
         conteiner.register(StyleLoginVCManager.self, name: "Dark") { _ in DarkStyle()}
         conteiner.register(ProtocolTimerControl.self) { _ in TimerControl()}

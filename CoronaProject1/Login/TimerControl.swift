@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Swinject
 
 class TimerControl: ProtocolTimerControl{
     public func setStyle(_ loginTextField: UITextField,_ view: UIView){
@@ -14,7 +15,6 @@ class TimerControl: ProtocolTimerControl{
             loginTextField.textColor = conteinerStyle?.textColor
         }
     }
-    
     private func timerControl() -> Bool{
         let date = Date()
         let calendar = Calendar.current
@@ -25,5 +25,5 @@ class TimerControl: ProtocolTimerControl{
             return false
         }
     }
-    
 }
+

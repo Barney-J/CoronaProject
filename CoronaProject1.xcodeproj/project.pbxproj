@@ -171,12 +171,12 @@
 			isa = PBXGroup;
 			children = (
 				2D1F469F254DB2C6007DF81D /* LoginView.swift */,
+				B3F42F8425B0C9D70058D5A8 /* Dependency.swift */,
 				B3F42F6425B0AAF20058D5A8 /* ProtocolValidator.swift */,
 				B3F42F6125B0AAE50058D5A8 /* ComplexPasswordFieldValidator.swift */,
-				B3F42F8425B0C9D70058D5A8 /* Dependency.swift */,
-				B3A2967D25B743280080E41C /* StyleLoginVCManager.swift */,
 				B39DA44525B8E103009A8316 /* ProtocolTimerControl.swift */,
 				B39DA44225B8E0EF009A8316 /* TimerControl.swift */,
+				B3A2967D25B743280080E41C /* StyleLoginVCManager.swift */,
 				B3A2968125B752AF0080E41C /* LightStyle.swift */,
 				B3A2968425B752C10080E41C /* DarkStyle.swift */,
 			);

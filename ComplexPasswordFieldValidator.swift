@@ -2,8 +2,11 @@ import Foundation
 
 
 class ComplexLogPassFieldValidator: FieldValidator {
+    func passwordValidator(_ password: String) -> Bool {
+        return false
+    }
     
-    public func checkLoginAndPassword (_ login: String ,_ password: String) -> Bool{
+    func checkLoginAndPassword (_ login: String ,_ password: String) -> Bool{
         if ((login != "") && (checkPasswordCount(password))){
             return true
         }else {
@@ -19,4 +22,6 @@ class ComplexLogPassFieldValidator: FieldValidator {
             return false
         }
     }
+    
+    
 }

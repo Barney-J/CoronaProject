@@ -28,7 +28,7 @@
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginToPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7G4-L4-cl4"/>
-                                    <segue destination="ncN-Ek-6hM" kind="show" id="AaK-8y-C3h"/>
+                                    <segue destination="ncN-Ek-6hM" kind="show" animates="NO" id="AaK-8y-C3h"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NFD-Y7-vfo">

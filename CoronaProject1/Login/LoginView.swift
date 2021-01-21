@@ -14,7 +14,6 @@ class LoginView: UIViewController {
     @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
     
     private let protocolValidator: FieldValidator = ComplexLogPassFieldValidator()
-    
     private let conteinerFieldValidator = Dependency.conteiner.resolve(FieldValidator.self)
     private let conteinerStyleLoginVC = Dependency.conteiner.resolve(ProtocolTimerControl.self)
     
@@ -75,9 +74,20 @@ class LoginView: UIViewController {
             UserManager.username = loginTextField.text
             
             let viewControllers = [TabViewController()]
+            if conteinerFieldValidator?.passwordValidator(passwordTextField.text!) != true{
+                let alert = UIAlertController(title: "incorrect password",
+                                              message: "incorrect password",
+                                              preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok",
+                                              style: .cancel,
+                                              handler: nil)
+                alert.addAction(okAction)
+                present(alert, animated: true, completion: nil)
+            }else{
+                guard let navigationController = self.navigationController else {return}
+                navigationController.setViewControllers(viewControllers, animated: true)
+            }
             
-            guard let navigationController = self.navigationController else {return}
-            navigationController.setViewControllers(viewControllers, animated: false)
         }
     }
 }
@@ -92,7 +102,8 @@ extension LoginView: UITextFieldDelegate {
             return true
         }
         func textFieldDidEndEditing(_ textField: UITextField) {
-            loginButton.isEnabled = protocolValidator.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
+            let boolCheck = conteinerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
+            loginButton.isEnabled = boolCheck!
         }
     }
 

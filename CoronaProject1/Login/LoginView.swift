@@ -13,9 +13,8 @@ class LoginView: UIViewController {
     @IBOutlet private weak var centerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
     
-    private let protocolValidator: FieldValidator = ComplexLogPassFieldValidator()
-    private let conteinerFieldValidator = Dependency.conteiner.resolve(FieldValidator.self)
-    private let conteinerStyleLoginVC = Dependency.conteiner.resolve(ProtocolTimerControl.self)
+    private let containerFieldValidator = Dependency.container.resolve(FieldValidator.self)
+    private let containerStyleLoginVC = Dependency.container.resolve(ProtocolTimerControl.self)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +28,7 @@ class LoginView: UIViewController {
         self.loginButton.layer.cornerRadius = 10
         self.animateLoginPassword()
         self.passwordTextField.isSecureTextEntry = true
-        self.conteinerStyleLoginVC?.setStyle(self.loginTextField, self.view)
+        self.containerStyleLoginVC?.setStyle(loginTextField, view)
 
     }
     
@@ -71,10 +70,7 @@ class LoginView: UIViewController {
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }else {
-            UserManager.username = loginTextField.text
-            
-            let viewControllers = [TabViewController()]
-            if conteinerFieldValidator?.passwordValidator(passwordTextField.text!) != true{
+            if containerFieldValidator?.passwordValidator(passwordTextField.text!) != true{
                 let alert = UIAlertController(title: "incorrect password",
                                               message: "incorrect password",
                                               preferredStyle: .alert)
@@ -84,6 +80,8 @@ class LoginView: UIViewController {
                 alert.addAction(okAction)
                 present(alert, animated: true, completion: nil)
             }else{
+                UserManager.username = loginTextField.text
+                let viewControllers = [TabViewController()]
                 guard let navigationController = self.navigationController else {return}
                 navigationController.setViewControllers(viewControllers, animated: true)
             }
@@ -91,9 +89,7 @@ class LoginView: UIViewController {
         }
     }
 }
-
 // MARK: UITextFieldDelegate
-
 extension LoginView: UITextFieldDelegate {
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             if (string == " ") {
@@ -102,7 +98,7 @@ extension LoginView: UITextFieldDelegate {
             return true
         }
         func textFieldDidEndEditing(_ textField: UITextField) {
-            let boolCheck = conteinerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
+            let boolCheck = containerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
             loginButton.isEnabled = boolCheck!
         }
     }

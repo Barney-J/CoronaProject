@@ -1,20 +1,19 @@
 import Foundation
 import UIKit
-import Swinject
 
 class TimerControl: ProtocolTimerControl{
-    public func setStyle(_ loginTextField: UITextField,_ view: UIView){
+    
+    public var style: StyleLoginVCManager?
+    
+    public func setStyle() -> StyleLoginVCManager {
         if (timerControl() == true){
-            let conteinerStyle = Dependency.container.resolve(StyleLoginVCManager.self, name: "Light")
-            view.backgroundColor = conteinerStyle?.bgColor
-            loginTextField.textColor = conteinerStyle?.textColor
-
+            style = Dependency.container.resolve(StyleLoginVCManager.self, name: "Light")
         }else if (timerControl() == false){
-            let conteinerStyle = Dependency.container.resolve(StyleLoginVCManager.self, name:"Dark" )
-            view.backgroundColor = conteinerStyle?.bgColor
-            loginTextField.textColor = conteinerStyle?.textColor
+            style = Dependency.container.resolve(StyleLoginVCManager.self, name: "Dark")
         }
+        return style!
     }
+    
     private func timerControl() -> Bool{
         let date = Date()
         let calendar = Calendar.current
@@ -27,3 +26,15 @@ class TimerControl: ProtocolTimerControl{
     }
 }
 
+//public func setStyle(_ loginTextField: UITextField,_ view: UIView){
+//    if (timerControl() == true){
+//        let conteinerStyle = Dependency.container.resolve(StyleLoginVCManager.self, name: "Light")
+//        view.backgroundColor = conteinerStyle?.bgColor
+//        loginTextField.textColor = conteinerStyle?.textColor
+//
+//    }else if (timerControl() == false){
+//        let conteinerStyle = Dependency.container.resolve(StyleLoginVCManager.self, name:"Dark" )
+//        view.backgroundColor = conteinerStyle?.bgColor
+//        loginTextField.textColor = conteinerStyle?.textColor
+//    }
+//}

@@ -7,7 +7,7 @@ import Swinject
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let notificationCenter = UNUserNotificationCenter.current()
-    var logger: Logger?
+//    var logger: Logger?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     //MARK: NotificationCenter
@@ -28,10 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container.register(StyleLoginVCManager.self, name: "Light") { _ in LightStyle()}
         container.register(StyleLoginVCManager.self, name: "Dark") { _ in DarkStyle()}
         container.register(ProtocolTimerControl.self) { _ in TimerControl()}
-        container.register(EventManager.self) {_ in ListEventManager()}.inObjectScope(.container)
+//        container.register(EventManager.self) {_ in ListEventManager()}.inObjectScope(.container)
         Dependency.container = container
         
-        logger = Logger(eventManager: Dependency.container.resolve(EventManager.self)!)
+//        logger = Logger(eventManager: Dependency.container.resolve(EventManager.self)!)
         
         FirebaseApp.configure()
 

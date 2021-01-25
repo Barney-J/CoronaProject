@@ -28,7 +28,12 @@ class LoginView: UIViewController {
         self.loginButton.layer.cornerRadius = 10
         self.animateLoginPassword()
         self.passwordTextField.isSecureTextEntry = true
-        self.containerStyleLoginVC?.setStyle(loginTextField, view)
+        
+        guard ((containerStyleLoginVC?.setStyle()) != nil) else {return}
+        self.view.backgroundColor = containerStyleLoginVC?.style?.bgColor
+        self.loginTextField.textColor = containerStyleLoginVC?.style?.textColor
+        self.passwordTextField.textColor = containerStyleLoginVC?.style?.textColor
+
 
     }
     

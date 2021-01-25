@@ -3,5 +3,6 @@ import UIKit
 import Swinject
 
 protocol ProtocolTimerControl{
-    func setStyle(_ loginTextField: UITextField,_ view: UIView)
+    func setStyle() -> StyleLoginVCManager
+    var style: StyleLoginVCManager? {get set} 
 }

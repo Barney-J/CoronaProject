@@ -5,9 +5,11 @@ import XCTest
 class CoronaProject1Tests: XCTestCase {
 
     var validator: ComplexLogPassFieldValidator!
+    var passwordValidator : AttemptsCountValidator!
     
     override func setUpWithError() throws {
         validator = ComplexLogPassFieldValidator()
+        passwordValidator = AttemptsCountValidator(fieldValidator: ComplexLogPassFieldValidator())
     }
 
     override func tearDownWithError() throws {
@@ -18,27 +20,31 @@ class CoronaProject1Tests: XCTestCase {
         let resualt = validator.checkLoginAndPassword("Eugene", "123456789")
         XCTAssertTrue(resualt)
     }
-    func testThatOnEmptyFieldCheckPassed() throws {
+    func testThatOnInsufficientPasswordCharacters() throws {
         let resualt = validator.checkLoginAndPassword("Eugene", "156781")
         XCTAssertFalse(resualt)
     }
     
-    func testThatOnEmptyLogFieldCheckPassed() throws {
+    func testThatOnEmptyLoginField() throws {
         let resualt = validator.checkLoginAndPassword("", "123456781")
         XCTAssertFalse(resualt)
     }
-    func testThatOnEmptyPassFieldCheckPassed() throws {
+    func testThatOnEmptyPasswordField() throws {
         let resualt = validator.checkLoginAndPassword("Eugene", "")
         XCTAssertFalse(resualt)
     }
     
-    func testCheckAttemptsCountOnPassword() throws {
-        for _ in 1...2{
-            let resualt = validator.checkLoginAndPassword("Eugene", "12345678")
+    func testCheckAttemptsCountOnPasswordShort() throws {
+        for _ in 1...3{
+            let resualt = passwordValidator.passwordValidator("12345678")
             XCTAssertFalse(resualt)
-
         }
-        let resualt = validator.checkLoginAndPassword("Eugene", "123456789")
-        XCTAssertTrue(resualt)
+        let resualt = passwordValidator.passwordValidator("12345678")
+        XCTAssertFalse(resualt)
     }
+    func testCheckAttemptsCountOnPassword() throws {
+            let resualt = passwordValidator.passwordValidator("123456789")
+            XCTAssertTrue(resualt)
+    }
+
 }

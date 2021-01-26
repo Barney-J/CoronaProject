@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let complexLogPassFieldValidator = ComplexLogPassFieldValidator()
             let passwordValidator = AttemptsCountValidator(fieldValidator: complexLogPassFieldValidator)
             return passwordValidator}
-//        conteiner.register(FieldValidator.self) {_ in ComplexLogPassFieldValidator()}
         container.register(StyleLoginVCManager.self, name: "Light") { _ in LightStyle()}
         container.register(StyleLoginVCManager.self, name: "Dark") { _ in DarkStyle()}
         container.register(ProtocolTimerControl.self) { _ in TimerControl()}

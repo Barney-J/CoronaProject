@@ -33,8 +33,6 @@ class LoginView: UIViewController {
         self.view.backgroundColor = containerStyleLoginVC?.style?.bgColor
         self.loginTextField.textColor = containerStyleLoginVC?.style?.textColor
         self.passwordTextField.textColor = containerStyleLoginVC?.style?.textColor
-
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,13 +76,14 @@ class LoginView: UIViewController {
         }else {
             if containerFieldValidator?.passwordValidator(passwordTextField.text!) != true{
                 let alert = UIAlertController(title: "incorrect password",
-                                              message: "incorrect password",
+                                              message: "password error",
                                               preferredStyle: .alert)
                 let okAction = UIAlertAction(title: "Ok",
                                               style: .cancel,
                                               handler: nil)
                 alert.addAction(okAction)
                 present(alert, animated: true, completion: nil)
+                self.loginButton.isEnabled = false
             }else{
                 UserManager.username = loginTextField.text
                 let viewControllers = [TabViewController()]
@@ -105,7 +104,7 @@ extension LoginView: UITextFieldDelegate {
         }
         func textFieldDidEndEditing(_ textField: UITextField) {
             let boolCheck = containerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
-            loginButton.isEnabled = boolCheck!
+            self.loginButton.isEnabled = boolCheck!
         }
     }
 

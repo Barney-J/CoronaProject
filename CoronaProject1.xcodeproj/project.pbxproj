@@ -38,6 +38,7 @@
 		B3A2968525B752C10080E41C /* DarkStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2968425B752C10080E41C /* DarkStyle.swift */; };
 		B3A8EBFD259A5D8100CD031B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8EBFC259A5D8100CD031B /* MapVC.swift */; };
 		B3AB1F3F25C07BA100DCB324 /* CoronaProject1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AB1F3E25C07BA100DCB324 /* CoronaProject1Tests.swift */; };
+		B3AB1F5D25C098CD00DCB324 /* MockComplexLogPassFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AB1F5C25C098CD00DCB324 /* MockComplexLogPassFieldValidator.swift */; };
 		B3F42F6525B0AAF20058D5A8 /* ProtocolValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F6425B0AAF20058D5A8 /* ProtocolValidator.swift */; };
 		B3F42F8525B0C9D70058D5A8 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F8425B0C9D70058D5A8 /* Dependency.swift */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		B3AB1F3C25C07BA100DCB324 /* CoronaProject1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronaProject1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3AB1F3E25C07BA100DCB324 /* CoronaProject1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaProject1Tests.swift; sourceTree = "<group>"; };
 		B3AB1F4025C07BA100DCB324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3AB1F5C25C098CD00DCB324 /* MockComplexLogPassFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComplexLogPassFieldValidator.swift; sourceTree = "<group>"; };
 		B3F42F6425B0AAF20058D5A8 /* ProtocolValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolValidator.swift; sourceTree = "<group>"; };
 		B3F42F8425B0C9D70058D5A8 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AB1F3E25C07BA100DCB324 /* CoronaProject1Tests.swift */,
+				B3AB1F5C25C098CD00DCB324 /* MockComplexLogPassFieldValidator.swift */,
 				B3AB1F4025C07BA100DCB324 /* Info.plist */,
 			);
 			path = CoronaProject1Tests;
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3AB1F5D25C098CD00DCB324 /* MockComplexLogPassFieldValidator.swift in Sources */,
 				B3AB1F3F25C07BA100DCB324 /* CoronaProject1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -22,7 +22,7 @@ class AttemptsCountValidator:FieldValidator{
     }
     
     private func numberOfAttemptsCheck() {
-        if self.numberOfAttempts == 3{
+        if self.numberOfAttempts == 5{
             createTimer()
         }
     }

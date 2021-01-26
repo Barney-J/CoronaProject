@@ -37,9 +37,20 @@
 		B3A2968225B752AF0080E41C /* LightStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2968125B752AF0080E41C /* LightStyle.swift */; };
 		B3A2968525B752C10080E41C /* DarkStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2968425B752C10080E41C /* DarkStyle.swift */; };
 		B3A8EBFD259A5D8100CD031B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8EBFC259A5D8100CD031B /* MapVC.swift */; };
+		B3AB1F3F25C07BA100DCB324 /* CoronaProject1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AB1F3E25C07BA100DCB324 /* CoronaProject1Tests.swift */; };
 		B3F42F6525B0AAF20058D5A8 /* ProtocolValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F6425B0AAF20058D5A8 /* ProtocolValidator.swift */; };
 		B3F42F8525B0C9D70058D5A8 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F8425B0C9D70058D5A8 /* Dependency.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3AB1F4125C07BA100DCB324 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2D1F467F254DB131007DF81D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D1F4686254DB131007DF81D;
+			remoteInfo = CoronaProject1;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		026F1953BD550A6EA018B0D0 /* Pods-CoronaProject1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaProject1.release.xcconfig"; path = "Target Support Files/Pods-CoronaProject1/Pods-CoronaProject1.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +87,9 @@
 		B3A2968125B752AF0080E41C /* LightStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStyle.swift; sourceTree = "<group>"; };
 		B3A2968425B752C10080E41C /* DarkStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkStyle.swift; sourceTree = "<group>"; };
 		B3A8EBFC259A5D8100CD031B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
+		B3AB1F3C25C07BA100DCB324 /* CoronaProject1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoronaProject1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3AB1F3E25C07BA100DCB324 /* CoronaProject1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoronaProject1Tests.swift; sourceTree = "<group>"; };
+		B3AB1F4025C07BA100DCB324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F42F6425B0AAF20058D5A8 /* ProtocolValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolValidator.swift; sourceTree = "<group>"; };
 		B3F42F8425B0C9D70058D5A8 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +103,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3AB1F3925C07BA100DCB324 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -96,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				2D1F4689254DB131007DF81D /* CoronaProject1 */,
+				B3AB1F3D25C07BA100DCB324 /* CoronaProject1Tests */,
 				2D1F4688254DB131007DF81D /* Products */,
 				74114CFF42E4CD9119102007 /* Pods */,
 				33485943F63D026C8A2140E4 /* Frameworks */,
@@ -106,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				2D1F4687254DB131007DF81D /* CoronaProject1.app */,
+				B3AB1F3C25C07BA100DCB324 /* CoronaProject1Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,6 +237,15 @@
 			path = MapVC;
 			sourceTree = "<group>";
 		};
+		B3AB1F3D25C07BA100DCB324 /* CoronaProject1Tests */ = {
+			isa = PBXGroup;
+			children = (
+				B3AB1F3E25C07BA100DCB324 /* CoronaProject1Tests.swift */,
+				B3AB1F4025C07BA100DCB324 /* Info.plist */,
+			);
+			path = CoronaProject1Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,17 +269,39 @@
 			productReference = 2D1F4687254DB131007DF81D /* CoronaProject1.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B3AB1F3B25C07BA100DCB324 /* CoronaProject1Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3AB1F4525C07BA100DCB324 /* Build configuration list for PBXNativeTarget "CoronaProject1Tests" */;
+			buildPhases = (
+				B3AB1F3825C07BA100DCB324 /* Sources */,
+				B3AB1F3925C07BA100DCB324 /* Frameworks */,
+				B3AB1F3A25C07BA100DCB324 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3AB1F4225C07BA100DCB324 /* PBXTargetDependency */,
+			);
+			name = CoronaProject1Tests;
+			productName = CoronaProject1Tests;
+			productReference = B3AB1F3C25C07BA100DCB324 /* CoronaProject1Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2D1F467F254DB131007DF81D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					2D1F4686254DB131007DF81D = {
 						CreatedOnToolsVersion = 12.1;
+					};
+					B3AB1F3B25C07BA100DCB324 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 2D1F4686254DB131007DF81D;
 					};
 				};
 			};
@@ -265,6 +319,7 @@
 			projectRoot = "";
 			targets = (
 				2D1F4686254DB131007DF81D /* CoronaProject1 */,
+				B3AB1F3B25C07BA100DCB324 /* CoronaProject1Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -278,6 +333,13 @@
 				B335748F2573F59C006F0808 /* GoogleService-Info.plist in Resources */,
 				2D1F4694254DB138007DF81D /* Assets.xcassets in Resources */,
 				2D1F4692254DB131007DF81D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3AB1F3A25C07BA100DCB324 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,7 +442,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B3AB1F3825C07BA100DCB324 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3AB1F3F25C07BA100DCB324 /* CoronaProject1Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3AB1F4225C07BA100DCB324 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D1F4686254DB131007DF81D /* CoronaProject1 */;
+			targetProxy = B3AB1F4125C07BA100DCB324 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2D1F4690254DB131007DF81D /* Main.storyboard */ = {
@@ -559,6 +637,50 @@
 			};
 			name = Release;
 		};
+		B3AB1F4325C07BA100DCB324 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z57846K44D;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources/**";
+				INFOPLIST_FILE = CoronaProject1Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Barney.CoronaProject1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoronaProject1.app/CoronaProject1";
+			};
+			name = Debug;
+		};
+		B3AB1F4425C07BA100DCB324 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z57846K44D;
+				HEADER_SEARCH_PATHS = "${SRCROOT}/Pods/Firebase/CoreOnly/Sources/**";
+				INFOPLIST_FILE = CoronaProject1Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Barney.CoronaProject1Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoronaProject1.app/CoronaProject1";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -576,6 +698,15 @@
 			buildConfigurations = (
 				2D1F469C254DB138007DF81D /* Debug */,
 				2D1F469D254DB138007DF81D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3AB1F4525C07BA100DCB324 /* Build configuration list for PBXNativeTarget "CoronaProject1Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3AB1F4325C07BA100DCB324 /* Debug */,
+				B3AB1F4425C07BA100DCB324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

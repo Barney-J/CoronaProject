@@ -34,19 +34,19 @@ class LoginView: UIViewController {
         self.loginTextField.textColor = containerStyleLoginVC?.style?.textColor
         self.passwordTextField.textColor = containerStyleLoginVC?.style?.textColor
     }
-    
+//MARK: Save Username
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.loginTextField.text = UserManager.username
         
     }
-    
+//MARK: Show Keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.loginTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
     }
-    
+//MARK: AnimateLoginPassword
     private func animateLoginPassword (){
         //MARK:AnimateLoginPasswordCollection
                 loginPassword.frame = CGRect(x: verticalLogPassConstraint.constant,

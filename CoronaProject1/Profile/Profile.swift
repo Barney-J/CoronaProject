@@ -7,24 +7,24 @@ class Profile: UIViewController {
     @IBOutlet weak var logoutButton: UIButton!
 //    let containerEventManager = Dependency.container.resolve(EventManager.self)
     
-    var datePicker: Date?
+    private var datePicker: Date?
     
-    let textField = UITextField()
-    let picker = UIDatePicker()
+    private let textField = UITextField()
+    private let picker = UIDatePicker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.isNavigationBarHidden = true
-        textField.inputView = picker
+        self.textField.inputView = self.picker
 //MARK: DataPicker
-        picker.datePickerMode = .dateAndTime
-        picker.preferredDatePickerStyle = .wheels
+        self.picker.datePickerMode = .dateAndTime
+        self.picker.preferredDatePickerStyle = .wheels
 //MARK: styling textField
-        textField.placeholder = "Reminder"
-        textField.layer.cornerRadius = 10
-        textField.layer.borderWidth = CGFloat(Float(1.0))
-        textField.backgroundColor = .gray
-        textField.textAlignment = .center
+        self.textField.placeholder = "Reminder"
+        self.textField.layer.cornerRadius = 10
+        self.textField.layer.borderWidth = CGFloat(Float(1.0))
+        self.textField.backgroundColor = .gray
+        self.textField.textAlignment = .center
 //MARK: toolbar
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -47,15 +47,15 @@ class Profile: UIViewController {
 
         toolbar.setItems([doneButton,space,cancelButton,clearButton], animated: false)
 //MARK:textField  constraint
-        textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.inputAccessoryView = toolbar
+        self.textField.translatesAutoresizingMaskIntoConstraints = false
+        self.textField.inputAccessoryView = toolbar
         view.addSubview(textField)
 
-        textField.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
-        textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200).isActive = true
-        textField.widthAnchor.constraint(equalToConstant: 250).isActive = true
-        textField.heightAnchor.constraint(equalToConstant: 35).isActive = true
-        username.text = UserManager.username
+        self.textField.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        self.textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 200).isActive = true
+        self.textField.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        self.textField.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        self.username.text = UserManager.username
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,7 +65,7 @@ class Profile: UIViewController {
     
  
 //MARK: #selector for toolbar
-    @objc func donePressed(){
+    @objc private func donePressed(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
@@ -78,15 +78,15 @@ class Profile: UIViewController {
     }
  
     
-    @objc func cancelPresser(){
+    @objc private func cancelPresser(){
         self.view.endEditing(true)
     }
-    @objc func clearPressed(){
+    @objc private func clearPressed(){
         self.textField.text = nil
         self.view.endEditing(true)
     }
 //MARK: sendNotifications
-    func sendNotifications() {
+    private func sendNotifications() {
         var dateComponents = DateComponents()
         guard let datePicker = datePicker else {return}
         

@@ -30,6 +30,7 @@
 		B364E3FE25B48FB8006C0FB0 /* JSONCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = B364E3FD25B48FB8006C0FB0 /* JSONCases.swift */; };
 		B374FD3925BF7F0100071652 /* ComplexPasswordFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374FD3825BF7F0100071652 /* ComplexPasswordFieldValidator.swift */; };
 		B374FD4D25BF965000071652 /* AttemptsCountValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B374FD4C25BF965000071652 /* AttemptsCountValidator.swift */; };
+		B38FBF7725C7740A005432AA /* AttemptsCountValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38FBF7625C7740A005432AA /* AttemptsCountValidatorTests.swift */; };
 		B39DA44325B8E0EF009A8316 /* TimerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39DA44225B8E0EF009A8316 /* TimerControl.swift */; };
 		B39DA44625B8E103009A8316 /* ProtocolTimerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39DA44525B8E103009A8316 /* ProtocolTimerControl.swift */; };
 		B39E1A4325B9EDFE00659553 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B39E1A4225B9EDFE00659553 /* EventManager.swift */; };
@@ -81,6 +82,7 @@
 		B364E3FD25B48FB8006C0FB0 /* JSONCases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONCases.swift; sourceTree = "<group>"; };
 		B374FD3825BF7F0100071652 /* ComplexPasswordFieldValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComplexPasswordFieldValidator.swift; sourceTree = "<group>"; };
 		B374FD4C25BF965000071652 /* AttemptsCountValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptsCountValidator.swift; sourceTree = "<group>"; };
+		B38FBF7625C7740A005432AA /* AttemptsCountValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttemptsCountValidatorTests.swift; sourceTree = "<group>"; };
 		B39DA44225B8E0EF009A8316 /* TimerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControl.swift; sourceTree = "<group>"; };
 		B39DA44525B8E103009A8316 /* ProtocolTimerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolTimerControl.swift; sourceTree = "<group>"; };
 		B39E1A4225B9EDFE00659553 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				B3AB1F3E25C07BA100DCB324 /* CoronaProject1Tests.swift */,
+				B38FBF7625C7740A005432AA /* AttemptsCountValidatorTests.swift */,
 				B3AB1F5C25C098CD00DCB324 /* MockComplexLogPassFieldValidator.swift */,
 				B3AB1F4025C07BA100DCB324 /* Info.plist */,
 			);
@@ -450,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3AB1F5D25C098CD00DCB324 /* MockComplexLogPassFieldValidator.swift in Sources */,
+				B38FBF7725C7740A005432AA /* AttemptsCountValidatorTests.swift in Sources */,
 				B3AB1F3F25C07BA100DCB324 /* CoronaProject1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

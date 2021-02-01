@@ -1,12 +1,11 @@
 import Foundation
 @testable import CoronaProject1
   
-class MockComplexLogPassFieldValidator:AttemptsCountValidator {
+class MockAttemptsCountValidator:FieldValidator {
     
     var mockResualt = false
     
-    func checkPassword(_ password: String) -> Bool {
-        return mockResualt 
+    func checkLoginAndPassword(_ login: String, _ password: String) -> Bool {
+        return mockResualt
     }
-    
 }

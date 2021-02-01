@@ -2,14 +2,12 @@ import XCTest
 
 @testable import CoronaProject1
 
-class CoronaProject1Tests: XCTestCase {
-    
-    var mockValidator: MockComplexLogPassFieldValidator!
+class ComplexLogPassFieldValidatorTests: XCTestCase {
+
     var validator: ComplexLogPassFieldValidator!
     
     
     override func setUpWithError() throws {
-        mockValidator = MockComplexLogPassFieldValidator(fieldValidator: ComplexLogPassFieldValidator() as FieldValidator)
         validator = ComplexLogPassFieldValidator()
     }
 
@@ -39,25 +37,4 @@ class CoronaProject1Tests: XCTestCase {
         let resualt = validator.checkLoginAndPassword("Eugene", "")
         XCTAssertFalse(resualt)
     }
-    
-    func testCheckAttemptsCountOnPassword() throws {
-        for _ in 1...5{
-            let resualt = validator.checkLoginAndPassword("Eugene", "12345678")
-            XCTAssertFalse(resualt)
-        }
-        mockValidator.mockResualt = true
-        let resualt = validator.checkLoginAndPassword("Eugene", "123456789")
-        XCTAssertFalse(resualt)
-    }
-    
-    func testForTheCorrectLastAttempt () throws {
-        for _ in 1...4{
-            let resualt = validator.checkLoginAndPassword("Eugene", "12345678")
-            XCTAssertFalse(resualt)
-        }
-        mockValidator.mockResualt = true
-        let resualt = validator.checkLoginAndPassword("Eugene", "123456789")
-        XCTAssertTrue(resualt)
-    }
-
 }

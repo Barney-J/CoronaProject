@@ -5,42 +5,51 @@ class AttemptsCountValidator:FieldValidator{
     private var fieldValidator: FieldValidator
     private var timer: Timer?
     private var numberOfAttempts = 0
-    static var interval = 0
+    private var interval = 0
+    static var boolCheck = false
     
     init(fieldValidator: FieldValidator) {
         self.fieldValidator = fieldValidator
     }
-    func passwordValidator(_ password: String) -> Bool {
+    private func passwordValidator(_ login: String , _ password: String) -> Bool {
         if password == "123456789"{
-            return true
-        }else {
-            self.numberOfAttempts += 1
-            print("Number of Attempts \(self.numberOfAttempts)")
-            numberOfAttemptsCheck()
-            return false
+            AttemptsCountValidator.boolCheck = true
+            return self.fieldValidator.checkLoginAndPassword(login, password)
+        }else{
+            AttemptsCountValidator.boolCheck = false
+            guard numberOfAttemptsCheck() else {return false}
+            print("number Of Attempts \(numberOfAttempts)")
+            return self.fieldValidator.checkLoginAndPassword(login, password)
         }
     }
     
-    private func numberOfAttemptsCheck() {
+    private func numberOfAttemptsCheck() -> Bool{
+        self.numberOfAttempts += 1
         if self.numberOfAttempts == 5{
             createTimer()
+            return false
         }
+        return true
     }
     
     private func createTimer(){
             self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] timer in
-                AttemptsCountValidator.interval += 1
-                print("step interval \(AttemptsCountValidator.interval)")
-                if AttemptsCountValidator.interval == 5{
+                self!.interval += 1
+                print("step interval \(self!.interval)")
+                if self!.interval == 5{
                 timer.invalidate()
                 print("stop timer")
-                AttemptsCountValidator.interval = 0
+                self!.interval = 0
                 self!.numberOfAttempts = 0
             }
         })
     }
     
     func checkLoginAndPassword(_ login: String, _ password: String) -> Bool {
-        return fieldValidator.checkLoginAndPassword(login, password).self
+        if self.interval == 0{
+            return passwordValidator(login, password)
+        }else{
+            return false
+        }
     }
 }

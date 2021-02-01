@@ -2,6 +2,66 @@ import UIKit
 import KeychainAccess
 import Swinject
 
+protocol ModelView {
+    var loginButtonTitle: String { get }
+    var loginButtonEnabled: ((Bool)->Void)? {get set}
+    var loginField: String? {get}
+    var passwordField: String? {get}
+    func inputLogin(_ input: String)
+    func inputPassword(_ input: String)
+    }
+    
+
+class LoginModelView: ModelView {
+    
+    let loginButtonTitle = "qwerty"
+    
+    private let validator: FieldValidator!
+    
+    var loginButtonEnabled: ((Bool) -> Void)? {
+        didSet{
+            self.checkField()
+        }
+    }
+
+    var loginField: String?
+    var passwordField: String?
+    
+    init(validator: FieldValidator) {
+        self.validator = Dependency.container.resolve(FieldValidator.self)
+    }
+    
+    private var login: String = ""{
+        didSet{
+            self.login = self.loginField!
+            self.checkField()
+        }
+    }
+    private var password = "" {
+        didSet{
+            self.password = self.passwordField!
+            self.checkField()
+        }
+    }
+    
+    func inputLogin(_ input: String){
+        self.login = input
+        self.checkField()
+    }
+    
+    func inputPassword(_ input: String){
+        self.password = input
+        self.checkField()
+    }
+    
+    private func checkField(){
+        let valid = self.validator.checkLoginAndPassword(login, password)
+        self.loginButtonEnabled!(valid)
+        
+        }
+    }
+
+
 class LoginView: UIViewController {
 
     @IBOutlet private weak var loginPassword: UIStackView!
@@ -12,9 +72,11 @@ class LoginView: UIViewController {
     
     @IBOutlet private weak var centerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
-    
+
     private let containerFieldValidator = Dependency.container.resolve(FieldValidator.self)
     private let containerStyleLoginVC = Dependency.container.resolve(ProtocolTimerControl.self)
+    private var viewModel = Dependency.container.resolve(ModelView.self)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,23 +90,28 @@ class LoginView: UIViewController {
         self.loginButton.layer.cornerRadius = 10
         self.animateLoginPassword()
         self.passwordTextField.isSecureTextEntry = true
+        self.setStyleLoginVC()
+       
         
-        guard ((containerStyleLoginVC?.setStyle()) != nil) else {return}
-        self.view.backgroundColor = containerStyleLoginVC?.style?.bgColor
-        self.loginTextField.textColor = containerStyleLoginVC?.style?.textColor
-        self.passwordTextField.textColor = containerStyleLoginVC?.style?.textColor
     }
 //MARK: Save Username
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.loginTextField.text = UserManager.username
-        
+
     }
 //MARK: Show Keyboard
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         self.loginTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
+    }
+//MARK: SetStyleLoginVC
+    private func setStyleLoginVC(){
+        guard ((containerStyleLoginVC?.setStyle()) != nil) else {return}
+        self.view.backgroundColor = containerStyleLoginVC?.style?.bgColor
+        self.loginTextField.textColor = containerStyleLoginVC?.style?.textColor
+        self.passwordTextField.textColor = containerStyleLoginVC?.style?.textColor
     }
 //MARK: AnimateLoginPassword
     private func animateLoginPassword (){
@@ -73,18 +140,32 @@ class LoginView: UIViewController {
                                           handler: nil)
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
-        }else {
-            if containerFieldValidator?.passwordValidator(passwordTextField.text!) != true{
-                let alert = UIAlertController(title: "incorrect password",
-                                              message: "password error",
-                                              preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "Ok",
-                                              style: .cancel,
-                                              handler: nil)
-                alert.addAction(okAction)
-                present(alert, animated: true, completion: nil)
-                self.loginButton.isEnabled = false
-            }else{
+        }
+//        else if containerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!) != false{
+//                let alert = UIAlertController(title: "incorrect password",
+//                                              message: "password error",
+//                                              preferredStyle: .alert)
+//                let okAction = UIAlertAction(title: "Ok",
+//                                              style: .cancel,
+//                                              handler: nil)
+//                alert.addAction(okAction)
+//                present(alert, animated: true, completion: nil)
+//            self.loginButton.isEnabled = false
+//            }
+            else{
+                let boolCheck = AttemptsCountValidator.boolCheck
+                if boolCheck == false{
+                    let alert = UIAlertController(title: "incorrect password",
+                                                                 message: "password error",
+                                                                 preferredStyle: .alert)
+                    let okAction = UIAlertAction(title: "Ok",
+                                                 style: .cancel,
+                                                 handler: nil)
+                    alert.addAction(okAction)
+                    present(alert, animated: true, completion: nil)
+                    self.loginButton.isEnabled = false
+
+                }
                 UserManager.username = loginTextField.text
                 let viewControllers = [TabViewController()]
                 guard let navigationController = self.navigationController else {return}
@@ -93,7 +174,7 @@ class LoginView: UIViewController {
             
         }
     }
-}
+//}
 // MARK: UITextFieldDelegate
 extension LoginView: UITextFieldDelegate {
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -105,6 +186,10 @@ extension LoginView: UITextFieldDelegate {
         func textFieldDidEndEditing(_ textField: UITextField) {
             let boolCheck = containerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
             self.loginButton.isEnabled = boolCheck!
+//            self.viewModel?.loginButtonEnabled = { [weak self] (enabled: Bool) in
+//                self?.loginButton.isEnabled = enabled
+//            }
+
         }
     }
 

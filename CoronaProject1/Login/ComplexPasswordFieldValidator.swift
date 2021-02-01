@@ -12,7 +12,7 @@ class ComplexLogPassFieldValidator: FieldValidator {
     }
     
     private func checkPasswordCount(_ password: String) -> Bool{
-        if password.count >= 9 && AttemptsCountValidator.interval == 0{
+        if password.count >= 9 {
             return true
         }else{
             return false

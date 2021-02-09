@@ -1,5 +1,5 @@
 import Foundation
-@testable import CoronaProject1
+@testable import CoronaProject
   
 class MockAttemptsCountValidator:FieldValidator {
     

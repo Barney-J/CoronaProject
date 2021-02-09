@@ -1,6 +1,6 @@
 import XCTest
 
-@testable import CoronaProject1
+@testable import CoronaProject
 
 class AttemptsCountValidatorTests: XCTestCase {
     

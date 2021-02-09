@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D1F4686254DB131007DF81D"
-               BuildableName = "CoronaProject1.app"
-               BlueprintName = "CoronaProject1"
-               ReferencedContainer = "container:CoronaProject1.xcodeproj">
+               BuildableName = "CoronaProject.app"
+               BlueprintName = "CoronaProject"
+               ReferencedContainer = "container:CoronaProject.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B3AB1F3B25C07BA100DCB324"
-               BuildableName = "CoronaProject1Tests.xctest"
-               BlueprintName = "CoronaProject1Tests"
-               ReferencedContainer = "container:CoronaProject1.xcodeproj">
+               BuildableName = "CoronaProjectTests.xctest"
+               BlueprintName = "CoronaProjectTests"
+               ReferencedContainer = "container:CoronaProject.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D1F4686254DB131007DF81D"
-            BuildableName = "CoronaProject1.app"
-            BlueprintName = "CoronaProject1"
-            ReferencedContainer = "container:CoronaProject1.xcodeproj">
+            BuildableName = "CoronaProject.app"
+            BlueprintName = "CoronaProject"
+            ReferencedContainer = "container:CoronaProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D1F4686254DB131007DF81D"
-            BuildableName = "CoronaProject1.app"
-            BlueprintName = "CoronaProject1"
-            ReferencedContainer = "container:CoronaProject1.xcodeproj">
+            BuildableName = "CoronaProject.app"
+            BlueprintName = "CoronaProject"
+            ReferencedContainer = "container:CoronaProject.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

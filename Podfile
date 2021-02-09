@@ -1,5 +1,5 @@
 
-target 'CoronaProject1' do
+target 'CoronaProject' do
   use_frameworks!
 
 	pod 'PKHUD', '~> 5.0'

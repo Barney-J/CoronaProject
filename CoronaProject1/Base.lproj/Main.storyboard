@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Login View-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginView" customModule="CoronaProject1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="CoronaProject1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <state key="normal" title="Logout"/>
                                         <connections>
-                                            <action selector="goLoginView:" destination="xI7-lC-s3d" eventType="touchUpInside" id="z4R-eZ-oBT"/>
+                                            <action selector="goLoginVC:" destination="xI7-lC-s3d" eventType="touchUpInside" id="hiw-Yn-6md"/>
                                             <segue destination="43K-2d-s1g" kind="presentation" modalPresentationStyle="fullScreen" id="ksu-g7-ZX8"/>
                                         </connections>
                                     </button>
@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="2919" y="34"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--TabVC-->
         <scene sceneID="iSS-5N-8b6">
             <objects>
-                <tabBarController id="ncN-Ek-6hM" customClass="TabViewController" customModule="CoronaProject1" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="ncN-Ek-6hM" customClass="TabVC" customModule="CoronaProject1" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Zei-cO-0zy"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ESz-ho-irA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -386,10 +386,10 @@
             </objects>
             <point key="canvasLocation" x="3860" y="696.05911330049264"/>
         </scene>
-        <!--Table Cases-->
+        <!--Table CasesVC-->
         <scene sceneID="Z2f-Fu-zQC">
             <objects>
-                <tableViewController id="EYW-fs-Jzg" customClass="TableCases" customModule="CoronaProject1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="EYW-fs-Jzg" customClass="TableCasesVC" customModule="CoronaProject1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1d5-81-yvY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

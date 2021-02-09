@@ -62,7 +62,7 @@ class LoginModelView: ModelView {
     }
 
 
-class LoginView: UIViewController {
+class LoginVC: UIViewController {
 
     @IBOutlet private weak var loginPassword: UIStackView!
     @IBOutlet private weak var loginTextField: UITextField!
@@ -141,23 +141,12 @@ class LoginView: UIViewController {
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
         }
-//        else if containerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!) != false{
-//                let alert = UIAlertController(title: "incorrect password",
-//                                              message: "password error",
-//                                              preferredStyle: .alert)
-//                let okAction = UIAlertAction(title: "Ok",
-//                                              style: .cancel,
-//                                              handler: nil)
-//                alert.addAction(okAction)
-//                present(alert, animated: true, completion: nil)
-//            self.loginButton.isEnabled = false
-//            }
             else{
                 let boolCheck = AttemptsCountValidator.boolCheck
                 if boolCheck == false{
                     let alert = UIAlertController(title: "incorrect password",
-                                                                 message: "password error",
-                                                                 preferredStyle: .alert)
+                                                  message: "password error",
+                                                  preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "Ok",
                                                  style: .cancel,
                                                  handler: nil)
@@ -167,16 +156,14 @@ class LoginView: UIViewController {
 
                 }
                 UserManager.username = loginTextField.text
-                let viewControllers = [TabViewController()]
+                let viewControllers = [TabVC()]
                 guard let navigationController = self.navigationController else {return}
                 navigationController.setViewControllers(viewControllers, animated: true)
             }
-            
         }
     }
-//}
 // MARK: UITextFieldDelegate
-extension LoginView: UITextFieldDelegate {
+extension LoginVC: UITextFieldDelegate {
         func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
             if (string == " ") {
                 return false
@@ -186,10 +173,6 @@ extension LoginView: UITextFieldDelegate {
         func textFieldDidEndEditing(_ textField: UITextField) {
             let boolCheck = containerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
             self.loginButton.isEnabled = boolCheck!
-//            self.viewModel?.loginButtonEnabled = { [weak self] (enabled: Bool) in
-//                self?.loginButton.isEnabled = enabled
-//            }
-
         }
     }
 

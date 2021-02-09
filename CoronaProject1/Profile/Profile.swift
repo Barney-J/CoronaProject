@@ -120,11 +120,11 @@ class Profile: UIViewController {
     
     
     
-//MARK: setVC to LoginView
-    @IBAction func goLoginView(_ sender: UIButton) {
+//MARK: setVC to LoginVC
+    @IBAction func goLoginVC(_ sender: UIButton) {
         guard let navigationController = self.navigationController else {return}
         
-        let login = [LoginView()]
+        let login = [LoginVC()]
         navigationController.tabBarController?.navigationController?.setViewControllers(login, animated: true)
 //        self.containerEventManager?.notify(event: <#T##EventType#>)
     }

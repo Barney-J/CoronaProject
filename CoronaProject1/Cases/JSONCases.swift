@@ -2,7 +2,7 @@ import Foundation
 import UIKit
 import PKHUD
 
-extension TableCases{
+extension TableCasesVC{
     func jsonCases(){
         //MARK: JSON
                 let config = URLSessionConfiguration.default

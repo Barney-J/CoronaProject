@@ -2,7 +2,7 @@ import UIKit
 import Foundation
 import PKHUD
 
-class TableCases: UITableViewController{
+class TableCasesVC: UITableViewController{
     
     var countryManager: [Country] = []
     

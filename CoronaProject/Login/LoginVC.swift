@@ -153,7 +153,8 @@ class LoginVC: UIViewController {
                     alert.addAction(okAction)
                     present(alert, animated: true, completion: nil)
                     self.loginButton.isEnabled = false
-
+                    AttemptsCountValidator.numberOfAttempts += 1
+                    print("Count attempts \(AttemptsCountValidator.numberOfAttempts)")
                 }
                 UserManager.username = loginTextField.text
                 let viewControllers = [TabVC()]

@@ -16,11 +16,11 @@ class ComplexLogPassFieldValidatorTests: XCTestCase {
     }
 
     func testThatOnFilledFieldCheckPassed() throws {
-        let resualt = validator.checkLoginAndPassword("Eugene", "123456789")
+        let resualt = validator.checkLoginAndPassword("Eugene", "TestTest")
         XCTAssertTrue(resualt)
     }
     func testThatOnInsufficientPasswordCharacters() throws {
-        let resualt = validator.checkLoginAndPassword("Eugene", "156781")
+        let resualt = validator.checkLoginAndPassword("Eugene", "tsteas")
         XCTAssertFalse(resualt)
     }
     
@@ -30,7 +30,7 @@ class ComplexLogPassFieldValidatorTests: XCTestCase {
     }
     
     func testThatOnEmptyLoginField() throws {
-        let resualt = validator.checkLoginAndPassword("", "123456781")
+        let resualt = validator.checkLoginAndPassword("", "TesteTest")
         XCTAssertFalse(resualt)
     }
     func testThatOnEmptyPasswordField() throws {

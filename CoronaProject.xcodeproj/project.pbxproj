@@ -142,6 +142,7 @@
 			children = (
 				2D1F468A254DB131007DF81D /* AppDelegate.swift */,
 				2D1F468C254DB131007DF81D /* SceneDelegate.swift */,
+				B3F42F8425B0C9D70058D5A8 /* Dependency.swift */,
 				2D7BE92F2561A6DB00013E37 /* Login */,
 				2D7BE92E2561A6B700013E37 /* Profile */,
 				2D7BE92B2561A5DD00013E37 /* TabBarViewController */,
@@ -203,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				2D1F469F254DB2C6007DF81D /* LoginVC.swift */,
-				B3F42F8425B0C9D70058D5A8 /* Dependency.swift */,
 				B3F42F6425B0AAF20058D5A8 /* ProtocolValidator.swift */,
 				B374FD4C25BF965000071652 /* AttemptsCountValidator.swift */,
 				B374FD3825BF7F0100071652 /* ComplexPasswordFieldValidator.swift */,

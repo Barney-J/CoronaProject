@@ -73,7 +73,7 @@ class LoginVC: UIViewController {
     @IBOutlet private weak var centerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
 
-    private let containerFieldValidator = Dependency.container.resolve(FieldValidator.self)
+    private let containerFieldValidator = Dependency.container.resolve(FieldValidator.self)!
     private let containerStyleLoginVC = Dependency.container.resolve(ProtocolTimerControl.self)
     private var viewModel = Dependency.container.resolve(ModelView.self)
 
@@ -172,8 +172,8 @@ extension LoginVC: UITextFieldDelegate {
             return true
         }
         func textFieldDidEndEditing(_ textField: UITextField) {
-            let boolCheck = containerFieldValidator?.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
-            self.loginButton.isEnabled = boolCheck!
+            let boolCheck = containerFieldValidator.checkLoginAndPassword(loginTextField.text!, passwordTextField.text!)
+            self.loginButton.isEnabled = boolCheck
         }
     }
 

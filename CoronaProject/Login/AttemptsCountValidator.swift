@@ -3,7 +3,6 @@ import Foundation
 class AttemptsCountValidator:FieldValidator{
     
     private var fieldValidator: FieldValidator
-//    private var timer: Timer?
     static var numberOfAttempts = 0
     private var interval = 0
     static var boolCheck = false

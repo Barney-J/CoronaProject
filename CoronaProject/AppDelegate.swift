@@ -7,7 +7,7 @@ import Swinject
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let notificationCenter = UNUserNotificationCenter.current()
-//    var logger: Logger?
+    var logger: Logger?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     //MARK: NotificationCenter
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sendNotifications()
         Dependency.container = Container()
         Dependency.registerDependency()
-//        logger = Logger(eventManager: Dependency.container.resolve(EventManager.self)!)
+        logger = Logger(eventManager: Dependency.container.resolve(EventManager.self)!)
         
         FirebaseApp.configure()
 

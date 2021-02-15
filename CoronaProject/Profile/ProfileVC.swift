@@ -5,7 +5,7 @@ class ProfileVC: UIViewController {
 
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
-//    let containerEventManager = Dependency.container.resolve(EventManager.self)
+    let containerEventManager = Dependency.container.resolve(EventManager.self)!
     
     private var datePicker: Date?
     
@@ -126,7 +126,7 @@ class ProfileVC: UIViewController {
         
         let login = [LoginVC()]
         navigationController.tabBarController?.navigationController?.setViewControllers(login, animated: true)
-//        self.containerEventManager?.notify()
+        self.containerEventManager.notify()
     }
     
 

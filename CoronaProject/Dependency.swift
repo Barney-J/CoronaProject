@@ -18,6 +18,6 @@ class Dependency {
             let loginModelView = LoginModelView(validator: complexLogPassFieldValidator)
             return loginModelView
         }
-//        container.register(EventManager.self) {_ in ListEventManager()}.inObjectScope(.container)
+        container.register(EventManager.self) {_ in ListEventManager()}.inObjectScope(.container)
     }
 }

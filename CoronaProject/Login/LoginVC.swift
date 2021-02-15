@@ -115,22 +115,20 @@ class LoginVC: UIViewController {
     }
 //MARK: AnimateLoginPassword
     private func animateLoginPassword (){
-        //MARK:AnimateLoginPasswordCollection
-                loginPassword.frame = CGRect(x: verticalLogPassConstraint.constant,
-                                              y: self.view.frame.height,
-                                              width: 235, height: 36)
+        loginPassword.frame = CGRect(x: verticalLogPassConstraint.constant,
+                                      y: self.view.frame.height,
+                                      width: 235, height: 36)
 
-                UIView.animate(withDuration: 3, delay: 0, options: [.transitionCurlUp]) {
-                    self.loginPassword.frame = CGRect(x: self.verticalLogPassConstraint.constant,
-                                                      y: self.centerConstraint.constant,
-                                                      width: 235, height: 36)
-                } completion: { _ in
-                    self.loginPassword.didMoveToWindow()
-                }
+        UIView.animate(withDuration: 3, delay: 0, options: [.transitionCurlUp]) {
+            self.loginPassword.frame = CGRect(x: self.verticalLogPassConstraint.constant,
+                                              y: self.centerConstraint.constant,
+                                              width: 235, height: 36)
+        } completion: { _ in
+            self.loginPassword.didMoveToWindow()
+        }
     }
 //MARK: LoginToPush
     @IBAction private func loginToPush(_ sender: UIButton) {
-                
         if let _ = Double(loginTextField.text!){
             let alert = UIAlertController(title: "A name cannot be a number",
                                           message: "Enter name",
@@ -140,8 +138,7 @@ class LoginVC: UIViewController {
                                           handler: nil)
             alert.addAction(okAction)
             present(alert, animated: true, completion: nil)
-        }
-            else{
+        } else {
                 let boolCheck = AttemptsCountValidator.boolCheck
                 if boolCheck == false{
                     let alert = UIAlertController(title: "incorrect password",

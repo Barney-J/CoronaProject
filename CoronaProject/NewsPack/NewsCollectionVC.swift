@@ -4,7 +4,7 @@ import PKHUD
 
 private let reuseIdentifier = "Cell"
 
-class NewsCollection: UICollectionViewController {
+class NewsCollectionVC: UICollectionViewController {
     
     private var queue: OperationQueue?
     var articleManager: News?

@@ -1,14 +1,6 @@
 import Foundation
 import UIKit
 
-struct News: Codable {
-    let status: String
-    let totalResults: Int
-    let articles: [Article]
-}
-
-
-// MARK: - Article
 struct Article: Codable {
     let author: String?
     let title: String
@@ -17,3 +9,4 @@ struct Article: Codable {
     let content: String?
     let publishedAt: String
 }
+

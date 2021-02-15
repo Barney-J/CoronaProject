@@ -8,9 +8,9 @@ struct UserManager:Codable {
     
 //MARK: SaveUserInLoginTextField
     static var username:String! {
-        get{
+        get {
             return UserDefaults.standard.string(forKey: SettingsKey.username.rawValue)
-        }set{
+        } set {
             let defaults = UserDefaults.standard
             let key = SettingsKey.username.rawValue
             if let name = newValue{

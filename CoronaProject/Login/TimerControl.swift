@@ -20,7 +20,7 @@ class TimerControl: ProtocolTimerControl{
         let hour = calendar.component( .hour , from: date)
         if hour <= 18 && hour >= 8 {
             return true
-        }else{
+        } else {
             return false
         }
     }

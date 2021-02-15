@@ -35,7 +35,6 @@
 //        self.newVisitReceived(visit, description: description)
 //      }
 //    }
-//
 //  }
 //}
 

@@ -14,7 +14,7 @@ class AttemptsCountValidator:FieldValidator{
         if password == "123456789"{
             AttemptsCountValidator.boolCheck = true
             return self.fieldValidator.checkLoginAndPassword(login, password)
-        }else{
+        } else {
             AttemptsCountValidator.boolCheck = false
             guard numberOfAttemptsCheck() else {return false}
             return self.fieldValidator.checkLoginAndPassword(login, password)
@@ -46,7 +46,7 @@ class AttemptsCountValidator:FieldValidator{
     func checkLoginAndPassword(_ login: String, _ password: String) -> Bool {
         if self.interval == 0{
             return passwordValidator(login, password)
-        }else{
+        } else {
             return false
         }
     }

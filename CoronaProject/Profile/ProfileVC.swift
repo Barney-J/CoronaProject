@@ -1,7 +1,7 @@
 import UIKit
 import UserNotifications
 
-class Profile: UIViewController {
+class ProfileVC: UIViewController {
 
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
@@ -126,7 +126,7 @@ class Profile: UIViewController {
         
         let login = [LoginVC()]
         navigationController.tabBarController?.navigationController?.setViewControllers(login, animated: true)
-//        self.containerEventManager?.notify(event: <#T##EventType#>)
+//        self.containerEventManager?.notify()
     }
     
 

@@ -42,7 +42,7 @@
 		B3A8EBFD259A5D8100CD031B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A8EBFC259A5D8100CD031B /* MapVC.swift */; };
 		B3AB1F3F25C07BA100DCB324 /* CoronaProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3AB1F3E25C07BA100DCB324 /* CoronaProjectTests.swift */; };
 		B3F42F6525B0AAF20058D5A8 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F6425B0AAF20058D5A8 /* FieldValidator.swift */; };
-		B3F42F8525B0C9D70058D5A8 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F8425B0C9D70058D5A8 /* Dependency.swift */; };
+		B3F42F8525B0C9D70058D5A8 /* Dependecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F42F8425B0C9D70058D5A8 /* Dependecies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +94,7 @@
 		B3AB1F4025C07BA100DCB324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3AB1F5C25C098CD00DCB324 /* MockComplexLogPassFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComplexLogPassFieldValidator.swift; sourceTree = "<group>"; };
 		B3F42F6425B0AAF20058D5A8 /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
-		B3F42F8425B0C9D70058D5A8 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		B3F42F8425B0C9D70058D5A8 /* Dependecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependecies.swift; sourceTree = "<group>"; };
 		CF237C080E0A0D435DA11FC1 /* Pods-CoronaProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaProject.debug.xcconfig"; path = "Target Support Files/Pods-CoronaProject/Pods-CoronaProject.debug.xcconfig"; sourceTree = "<group>"; };
 		FA994871DDB6FFC8BE68BFB9 /* Pods-CoronaProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoronaProject.release.xcconfig"; path = "Target Support Files/Pods-CoronaProject/Pods-CoronaProject.release.xcconfig"; sourceTree = "<group>"; };
 		FD8CD98B41CF521AABC53079 /* Pods_CoronaProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoronaProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,7 +144,7 @@
 			children = (
 				2D1F468A254DB131007DF81D /* AppDelegate.swift */,
 				2D1F468C254DB131007DF81D /* SceneDelegate.swift */,
-				B3F42F8425B0C9D70058D5A8 /* Dependency.swift */,
+				B3F42F8425B0C9D70058D5A8 /* Dependecies.swift */,
 				B30DA7C625DB0D9E000D0F41 /* StylizationVC */,
 				2D7BE92F2561A6DB00013E37 /* Login */,
 				2D7BE92E2561A6B700013E37 /* Profile */,
@@ -481,7 +481,7 @@
 				B39DA44325B8E0EF009A8316 /* TimerControl.swift in Sources */,
 				B374FD4D25BF965000071652 /* AttemptsCountValidator.swift in Sources */,
 				B3A2967E25B743280080E41C /* StyleLoginVCManager.swift in Sources */,
-				B3F42F8525B0C9D70058D5A8 /* Dependency.swift in Sources */,
+				B3F42F8525B0C9D70058D5A8 /* Dependecies.swift in Sources */,
 				2D504D1225535F2F00FC7552 /* TableCasesVC.swift in Sources */,
 				B374FD3925BF7F0100071652 /* ComplexPasswordFieldValidator.swift in Sources */,
 				B364E3FE25B48FB8006C0FB0 /* JSONCases.swift in Sources */,

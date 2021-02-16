@@ -4,7 +4,6 @@ import PKHUD
 
 extension TableCasesVC{
     func jsonCases(){
-        //MARK: JSON
                 let config = URLSessionConfiguration.default
                 let session = URLSession(configuration: config)
                 guard

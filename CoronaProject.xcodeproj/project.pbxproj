@@ -145,7 +145,7 @@
 				2D1F468A254DB131007DF81D /* AppDelegate.swift */,
 				2D1F468C254DB131007DF81D /* SceneDelegate.swift */,
 				B3F42F8425B0C9D70058D5A8 /* Dependency.swift */,
-				B30DA7C625DB0D9E000D0F41 /* StyleVC */,
+				B30DA7C625DB0D9E000D0F41 /* StylizationVC */,
 				2D7BE92F2561A6DB00013E37 /* Login */,
 				2D7BE92E2561A6B700013E37 /* Profile */,
 				2D7BE92B2561A5DD00013E37 /* TabBarViewController */,
@@ -226,7 +226,7 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		B30DA7C625DB0D9E000D0F41 /* StyleVC */ = {
+		B30DA7C625DB0D9E000D0F41 /* StylizationVC */ = {
 			isa = PBXGroup;
 			children = (
 				B39DA44225B8E0EF009A8316 /* TimerControl.swift */,
@@ -235,7 +235,7 @@
 				B3A2968125B752AF0080E41C /* LightStyle.swift */,
 				B3A2968425B752C10080E41C /* DarkStyle.swift */,
 			);
-			name = StyleVC;
+			name = StylizationVC;
 			path = Login;
 			sourceTree = "<group>";
 		};

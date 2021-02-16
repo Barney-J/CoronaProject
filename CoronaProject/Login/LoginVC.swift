@@ -74,8 +74,8 @@ class LoginVC: UIViewController {
     @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
 
     private let containerFieldValidator = Dependency.container.resolve(FieldValidator.self)!
-    private let containerStyleLoginVC = Dependency.container.resolve(ProtocolTimerControl.self)
-    private var viewModel = Dependency.container.resolve(ModelView.self)
+    private let containerStyleLoginVC = Dependency.container.resolve(ProtocolTimerControl.self)!
+    private var viewModel = Dependency.container.resolve(ModelView.self)!
 
     
     override func viewDidLoad() {
@@ -108,10 +108,10 @@ class LoginVC: UIViewController {
     }
 //MARK: SetStyleLoginVC
     private func setStyleLoginVC(){
-        guard ((containerStyleLoginVC?.setStyle()) != nil) else {return}
-        self.view.backgroundColor = containerStyleLoginVC?.style?.bgColor
-        self.loginTextField.textColor = containerStyleLoginVC?.style?.textColor
-        self.passwordTextField.textColor = containerStyleLoginVC?.style?.textColor
+        let style = containerStyleLoginVC.setStyle()
+        self.view.backgroundColor = style.bgColor
+        self.loginTextField.textColor = style.textColor
+        self.passwordTextField.textColor = style.textColor
     }
 //MARK: AnimateLoginPassword
     private func animateLoginPassword (){

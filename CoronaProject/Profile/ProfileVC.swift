@@ -5,7 +5,7 @@ class ProfileVC: UIViewController {
 
     @IBOutlet weak var username: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
-    let containerEventManager = Dependency.container.resolve(EventManager.self)!
+    let containerEventManager = Dependecies.container.resolve(EventManager.self)!
     
     private var datePicker: Date?
     

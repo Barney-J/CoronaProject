@@ -1,66 +1,5 @@
 import UIKit
-import KeychainAccess
 import Swinject
-
-protocol ModelView {
-    var loginButtonTitle: String { get }
-    var loginButtonEnabled: ((Bool)->Void)? {get set}
-    var loginField: String? {get}
-    var passwordField: String? {get}
-    func inputLogin(_ input: String)
-    func inputPassword(_ input: String)
-    }
-    
-
-class LoginModelView: ModelView {
-    
-    let loginButtonTitle = "qwerty"
-    
-    private let validator: FieldValidator!
-    
-    var loginButtonEnabled: ((Bool) -> Void)? {
-        didSet{
-            self.checkField()
-        }
-    }
-
-    var loginField: String?
-    var passwordField: String?
-    
-    init(validator: FieldValidator) {
-        self.validator = Dependency.container.resolve(FieldValidator.self)
-    }
-    
-    private var login: String = ""{
-        didSet{
-            self.login = self.loginField!
-            self.checkField()
-        }
-    }
-    private var password = "" {
-        didSet{
-            self.password = self.passwordField!
-            self.checkField()
-        }
-    }
-    
-    func inputLogin(_ input: String){
-        self.login = input
-        self.checkField()
-    }
-    
-    func inputPassword(_ input: String){
-        self.password = input
-        self.checkField()
-    }
-    
-    private func checkField(){
-        let valid = self.validator.checkLoginAndPassword(login, password)
-        self.loginButtonEnabled!(valid)
-        
-        }
-    }
-
 
 class LoginVC: UIViewController {
 
@@ -73,9 +12,8 @@ class LoginVC: UIViewController {
     @IBOutlet private weak var centerConstraint: NSLayoutConstraint!
     @IBOutlet private weak var verticalLogPassConstraint: NSLayoutConstraint!
 
-    private let containerFieldValidator = Dependency.container.resolve(FieldValidator.self)!
-    private let containerStyleLoginVC = Dependency.container.resolve(ProtocolTimerControl.self)!
-    private var viewModel = Dependency.container.resolve(ModelView.self)!
+    private let containerFieldValidator = Dependecies.container.resolve(FieldValidator.self)!
+    private let containerStyleLoginVC = Dependecies.container.resolve(ProtocolTimerControl.self)!
 
     
     override func viewDidLoad() {
@@ -91,8 +29,6 @@ class LoginVC: UIViewController {
         self.animateLoginPassword()
         self.passwordTextField.isSecureTextEntry = true
         self.setStyleLoginVC()
-       
-        
     }
 //MARK: Save Username
     override func viewWillAppear(_ animated: Bool) {
@@ -141,7 +77,7 @@ class LoginVC: UIViewController {
         } else {
                 let boolCheck = AttemptsCountValidator.boolCheck
                 if boolCheck == false{
-                    let alert = UIAlertController(title: "incorrect password",
+                    let alert = UIAlertController(title: "password must contain at least one capital letter and one small letter",
                                                   message: "password error",
                                                   preferredStyle: .alert)
                     let okAction = UIAlertAction(title: "Ok",
@@ -151,7 +87,6 @@ class LoginVC: UIViewController {
                     present(alert, animated: true, completion: nil)
                     self.loginButton.isEnabled = false
                     AttemptsCountValidator.numberOfAttempts += 1
-                    print("Count attempts \(AttemptsCountValidator.numberOfAttempts)")
                 }
                 UserManager.username = loginTextField.text
                 let viewControllers = [TabVC()]

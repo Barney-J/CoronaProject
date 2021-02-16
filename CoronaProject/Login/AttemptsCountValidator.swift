@@ -11,7 +11,7 @@ class AttemptsCountValidator:FieldValidator{
         self.fieldValidator = fieldValidator
     }
     private func passwordValidator(_ login: String , _ password: String) -> Bool {
-        if password == "123456789"{
+        if differentCaseExisting(password) == true{
             AttemptsCountValidator.boolCheck = true
             return self.fieldValidator.checkLoginAndPassword(login, password)
         } else {
@@ -22,7 +22,6 @@ class AttemptsCountValidator:FieldValidator{
     }
     
     private func numberOfAttemptsCheck() -> Bool{
-//        self.numberOfAttempts += 1
         if AttemptsCountValidator.numberOfAttempts == 5{
             createTimer()
             return false
@@ -42,6 +41,25 @@ class AttemptsCountValidator:FieldValidator{
             }
         })
     }
+    
+    private func differentCaseExisting(_ password: String) -> Bool {
+        var upperCase = false
+        var lowerCase = false
+        for char in password {
+            if char.isUppercase {
+                 upperCase = true
+             }
+            if char.isLowercase {
+                lowerCase = true
+            }
+         }
+        if upperCase && lowerCase {
+            return true
+        } else {
+            return false
+        }
+     }
+
     
     func checkLoginAndPassword(_ login: String, _ password: String) -> Bool {
         if self.interval == 0{

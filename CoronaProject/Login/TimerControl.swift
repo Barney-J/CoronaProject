@@ -7,9 +7,9 @@ class TimerControl: ProtocolTimerControl{
     
     public func setStyle() -> StyleLoginVCManager {
         if (timerControl() == true){
-            style = Dependency.container.resolve(StyleLoginVCManager.self, name: "Light")
+            style = Dependecies.container.resolve(StyleLoginVCManager.self, name: "Light")
         }else if (timerControl() == false){
-            style = Dependency.container.resolve(StyleLoginVCManager.self, name: "Dark")
+            style = Dependecies.container.resolve(StyleLoginVCManager.self, name: "Dark")
         }
         return style!
     }
